@@ -1,0 +1,31 @@
+<div #sideMenuContainer class="side-menu-container">
+
+  <bs-side-menu-items-list
+    [sideMenuListObjects]="sideMenuListObjects"
+    [menuWidth]="menuWidth"
+    [separatorDragging]="separatorDragging"
+    [size]="size"
+    [selectedMenuItem]="selectedMenuItem"
+    (menuItemClick)="MenuItemClickHandler($event)"
+    (dragOverLeftSide)="DragOverLeftSideHandler($event)"
+  ></bs-side-menu-items-list>
+
+  <div class="side-menu-separator" draggable="true"
+       [ngStyle]="{
+        'left': menuWidth + 'px'
+       }"
+       (dragstart)="SeparatorDragStartHandler($event)"
+       (dragend)="SeparatorDragEndHandler($event)">
+  </div>
+
+  <div class="side-menu-content-area"
+       [ngStyle]="{
+        'left': (menuWidth + 3) + 'px',
+        'width': 'calc(100% - ' + (menuWidth + 3) + 'px)'
+       }"
+       (dragover)="DragOverRightSide($event)">
+
+    <ng-template bsSideMenuContainerContent></ng-template>
+  </div>
+
+</div>

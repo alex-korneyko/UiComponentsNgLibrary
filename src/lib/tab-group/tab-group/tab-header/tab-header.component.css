@@ -1,0 +1,10 @@
+.tab-group-header-container {
+  display: flex;
+}
+
+.tab-group-header-empty-area {
+  flex: 1;
+  height: inherit;
+  border-bottom: 1px solid dimgray;
+  border-left: 1px solid dimgray;
+}

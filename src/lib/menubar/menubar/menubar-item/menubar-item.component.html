@@ -1,0 +1,22 @@
+<div class="menubar-item-container"
+     [bsDropdownMenu]="{menuComponent: DropdownMenu}"
+     [bsDropdownMenuEventType]="menubarItem.menubar.isActive ? DropdownEventType.MouseEnter : DropdownEventType.MouseClick"
+     [class]="menubarItem.color"
+     [ngClass]="{
+      'lg': menubarItem.size === Size.lg,
+      'sm': menubarItem.size === Size.sm,
+      'xsm': menubarItem.size === Size.xsm
+     }">
+
+  <span>
+    {{menubarItem.title}}
+  </span>
+
+  <bs-dropdown-menu
+      #DropdownMenu
+      [dropdownDirection]=" DropdownDirection.Bottom"
+      [dropdownMenu]="menubarItem.dropdownMenu"
+      (dropdownOnShow)="MenuOnShowHandler()"
+  ></bs-dropdown-menu>
+
+</div>

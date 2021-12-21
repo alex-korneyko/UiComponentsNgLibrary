@@ -1,0 +1,41 @@
+<div class="table-container">
+
+    <bs-table-header
+        [table]="table"
+        [size]="table.size"
+        [color]="table.color"
+        [enableSettings]="true"
+        (headerColumnClick)="HeaderColumnClickHandler($event)"
+    ></bs-table-header>
+
+    <div class="table-data-container">
+
+        <div *ngFor="let row of table?.rows; let last = last"
+             [bsDropdown]="{dropdownComponent: simpleDropdown, data: row.dataItem}"
+             [bsDropdownEventType]="dropdownEventType.MouseDoubleClick"
+             [bsDropdownMenu]="{menuComponent: testDropdownMenu, data: row.dataItem}"
+             [bsDropdownMenuEventType]="dropdownEventType.MouseContext">
+
+            <bs-table-row
+                *ngIf="!row.hidden"
+                [tableRow]="row"
+                [isLastRow]="last"
+                [isSelected]="table.RowIsSelected(row.dataItem)"
+                [size]="table.size"
+                [color]="table.color"
+                (rowClick)="RowClickHandler($event)"
+                (dblRowClick)="DblRowClickHandler($event)"
+            ></bs-table-row>
+        </div>
+
+    </div>
+
+    <bs-dropdown #simpleDropdown
+                 [content]="dropdownContent"
+                 [direction]="dropdownDirection"
+    ></bs-dropdown>
+
+    <bs-dropdown-menu #testDropdownMenu
+                      [dropdownMenu]="dropdownMenu"
+    ></bs-dropdown-menu>
+</div>

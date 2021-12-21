@@ -1,0 +1,57 @@
+<div class="text-area-container">
+  <bs-input-title *ngIf="titlePosition == titlePositionValues.Top"
+                  [size]="size"
+                  [titlePosition]="titlePosition"
+                  [color]="color"
+                  [disabled]="disabled">
+    {{title}}
+  </bs-input-title>
+
+  <div style="display: flex; width: 100%;">
+    <bs-input-title *ngIf="titlePosition == titlePositionValues.Left"
+                    [size]="size"
+                    [titlePosition]="titlePosition"
+                    [color]="color"
+                    [disabled]="disabled"
+                    [ngStyle]="{
+                      'width': titleWidth
+                    }">
+      {{title}}
+    </bs-input-title>
+
+    <div class="text-area" style="flex: 1"
+         [class.disabled]="disabled"
+         [class]="color">
+      <textarea
+             [disabled]="disabled"
+             [ngModel]="bsModel"
+             (ngModelChange)="modelChanged($event)"
+             [title]="prompt"
+             [placeholder]="placeholder"
+             [ngClass]="{
+            'xsm': size === sizeValues.xsm,
+            'sm': size === sizeValues.sm,
+            'lg': size === sizeValues.lg
+           }"></textarea>
+    </div>
+
+    <bs-input-title *ngIf="titlePosition == titlePositionValues.Right"
+                    [size]="size"
+                    [titlePosition]="titlePosition"
+                    [color]="color"
+                    [disabled]="disabled"
+                    [ngStyle]="{
+                      'width': titleWidth
+                    }">
+      {{title}}
+    </bs-input-title>
+  </div>
+
+  <bs-input-title *ngIf="titlePosition == titlePositionValues.Bottom"
+                  [size]="size"
+                  [titlePosition]="titlePosition"
+                  [color]="color"
+                  [disabled]="disabled">
+    {{title}}
+  </bs-input-title>
+</div>

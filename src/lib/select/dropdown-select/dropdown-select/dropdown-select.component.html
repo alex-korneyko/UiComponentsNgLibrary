@@ -1,0 +1,67 @@
+<div class="select-container"
+     [class]="color">
+
+  <bs-input-title *ngIf="titlePosition == titlePositionValues.Top"
+                  [size]="size"
+                  [titlePosition]="titlePosition"
+                  [color]="color"
+                  [disabled]="disabled">
+    {{title}}
+  </bs-input-title>
+
+  <div style="display: flex; width: 100%;">
+    <bs-input-title *ngIf="titlePosition == titlePositionValues.Left"
+                    [size]="size"
+                    [titlePosition]="titlePosition"
+                    [color]="color"
+                    [disabled]="disabled"
+                    [ngStyle]="{
+                      'width': titleWidth
+                    }">
+      {{title}}
+    </bs-input-title>
+
+    <div class="select-input-container" style="flex: 1"
+         [class.disabled]="disabled"
+         [class]="color">
+      <select class="select-component"
+        [disabled]="disabled"
+        [ngModel]="bsModel"
+        (ngModelChange)="modelChanged($event)"
+        [title]="prompt"
+        [ngClass]="{
+            'xsm': size === sizeValues.xsm,
+            'sm': size === sizeValues.sm,
+            'lg': size === sizeValues.lg
+           }"
+      >
+        <option
+          *ngFor="let value of values"
+          [disabled]="value.disabled"
+        >
+          {{value.text}}
+        </option>
+      </select>
+    </div>
+
+    <bs-input-title *ngIf="titlePosition == titlePositionValues.Right"
+                    [size]="size"
+                    [titlePosition]="titlePosition"
+                    [color]="color"
+                    [disabled]="disabled"
+                    [ngStyle]="{
+                      'width': titleWidth
+                    }">
+      {{title}}
+    </bs-input-title>
+  </div>
+
+  <bs-input-title *ngIf="titlePosition == titlePositionValues.Bottom"
+                  [size]="size"
+                  [titlePosition]="titlePosition"
+                  [color]="color"
+                  [disabled]="disabled">
+    {{title}}
+  </bs-input-title>
+</div>
+

@@ -1,0 +1,139 @@
+.text-input-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid transparent;
+}
+
+input {
+  height: calc(var(--std-height) - 2px);
+  line-height: calc(var(--std-height) - 2px);
+  font-size: calc(var(--std-height) - 12px);
+  width: 100%;
+  display: block;
+  border: none;
+  border-radius: 2px;
+  flex: 1
+}
+
+input:focus {
+  outline: none;
+}
+
+input:disabled {
+  background-color: #ececec;
+}
+
+input.xsm {
+  height: calc(var(--xsm-height) - 2px);
+  line-height: calc(var(--xsm-height) - 2px);
+  font-size: calc(var(--xsm-height) - 6px);
+}
+
+input.sm {
+  height: calc(var(--sm-height) - 2px);
+  line-height: calc(var(--sm-height) - 2px);
+  font-size: calc(var(--sm-height) - 9px);
+}
+
+input.lg {
+  height: calc(var(--lg-height) - 2px);
+  line-height: calc(var(--lg-height) - 2px);
+  font-size: calc(var(--lg-height) - 14px);
+}
+
+.input {
+  width: 100%;
+  padding: 1px
+}
+
+.input.Light {
+  background: var(--light-bg-norm);
+  color: var(--light-font-norm);
+}
+
+.input.Light.disabled {
+  background: var(--light-bg-disabled);
+  color: var(--light-font-disabled);
+}
+
+.input.Blue {
+  background: var(--blue-bg-norm);
+  color: var(--blue-font-norm);
+}
+
+.input.Blue.disabled {
+  background: var(--blue-bg-disabled);
+  color: var(--blue-font-disabled);
+}
+
+.input.BlueSea {
+  background: var(--blue-sea-bg-norm);
+  color: var(--blue-sea-font-norm);
+}
+
+.input.BlueSea.disabled {
+  background: var(--blue-sea-bg-disabled);
+  color: var(--blue-sea-font-disabled);
+}
+
+.input.Grey {
+  background: var(--grey-bg-norm);
+  color: var(--grey-font-norm);
+}
+
+.input.Grey.disabled {
+  background: var(--grey-bg-disabled);
+  color: var(--grey-font-disabled);
+}
+
+.input.SlateGrey {
+  background: var(--slate-grey-bg-norm);
+  color: var(--slate-grey-font-norm);
+}
+
+.input.SlateGrey.disabled {
+  background: var(--slate-grey-bg-disabled);
+  color: var(--slate-grey-font-disabled);
+}
+
+.input.Green {
+  background: var(--green-bg-norm);
+  color: var(--green-font-norm);
+}
+
+.input.Green.disabled {
+  background: var(--green-bg-disabled);
+  color: var(--green-font-disabled);
+}
+
+.input.Red {
+  background: var(--red-bg-norm);
+  color: var(--red-font-norm);
+}
+
+.input.Red.disabled {
+  background: var(--red-bg-disabled);
+  color: var(--red-font-disabled);
+}
+
+.input.Yellow {
+  background: var(--yellow-bg-norm);
+  color: var(--yellow-font-norm);
+}
+
+.input.Yellow.disabled {
+  background: var(--yellow-bg-disabled);
+  color: var(--yellow-font-disabled);
+}
+
+.input.Dark {
+  background: var(--dark-bg-norm);
+  color: var(--dark-font-norm);
+}
+
+.input.Dark.disabled {
+  background: var(--dark-bg-disabled);
+  color: var(--dark-font-disabled);
+}

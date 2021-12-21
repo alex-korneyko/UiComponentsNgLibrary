@@ -1,0 +1,39 @@
+<div class="checkbox-container">
+  <bs-input-title *ngIf="titlePosition == titlePositionValues.Left"
+                  [size]="size"
+                  [titlePosition]="titlePosition"
+                  [color]="color"
+                  [disabled]="disabled"
+                  [ngStyle]="{
+                      'width': titleWidth
+                    }">
+    {{title}}
+  </bs-input-title>
+
+  <div class="checkbox"
+       [class.disabled]="disabled"
+       [class]="color">
+    <input type="checkbox" class="input-component"
+           (change)="onModelChange($event)"
+           [(ngModel)]="bsModel"
+           [title]="prompt"
+           [disabled]="disabled"
+           [ngClass]="{
+            'xsm': size === sizeValues.xsm,
+            'sm': size === sizeValues.sm,
+            'lg': size === sizeValues.lg
+           }"
+    >
+  </div>
+
+  <bs-input-title *ngIf="titlePosition == titlePositionValues.Right"
+                  [size]="size"
+                  [titlePosition]="titlePosition"
+                  [color]="color"
+                  [disabled]="disabled"
+                  [ngStyle]="{
+                      'width': titleWidth
+                    }">
+    {{title}}
+  </bs-input-title>
+</div>

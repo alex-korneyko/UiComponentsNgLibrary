@@ -1,0 +1,12 @@
+<div class="tab-header-item-container"
+     (click)="TabItemClickHandler()"
+     [class]="tabHeaderItem.tabGroup.color"
+     [ngClass]="{
+      'active': tabHeaderItem.isActive,
+      'lg': tabHeaderItem.tabGroup.size === Size.lg,
+      'sm': tabHeaderItem.tabGroup.size === Size.sm,
+      'xsm': tabHeaderItem.tabGroup.size === Size.xsm
+     }"
+>
+  <span>{{tabHeaderItem.title}}</span>
+</div>

@@ -1,0 +1,131 @@
+.table-header-container {
+    border-bottom: 1px solid dimgray;
+    height: var(--std-height);
+    font-size: var(--std-fontsize);
+    font-weight: var(--std-fontweight);
+    line-height: var(--std-height);
+
+}
+
+.table-header-items {
+    display: inline-block;
+    width: calc(100% - 17px);
+}
+
+.table-settings {
+    display: inline-block;
+    width: 17px;
+    text-align: center;
+    position: absolute;
+}
+
+.table-header-container.xsm {
+    height: var(--xsm-height);
+    font-size: var(--xsm-fontsize);
+    font-weight: var(--xsm-fontweight);
+    line-height: var(--xsm-height);
+}
+
+.table-header-container.sm {
+    height: var(--sm-height);
+    font-size: var(--sm-fontsize);
+    font-weight: var(--sm-fontweight);
+    line-height: var(--sm-height);
+}
+
+.table-header-container.lg {
+    height: var(--lg-height);
+    font-size: var(--lg-fontsize);
+    font-weight: var(--lg-fontweight);
+    line-height: var(--lg-height);
+}
+
+.Light {
+    background: var(--light-bg-norm);
+    color: var(--light-font-norm);
+}
+
+.Light.disabled {
+    background: var(--light-bg-disabled);
+    color: var(--light-font-disabled);
+}
+
+.Blue {
+    background: var(--blue-bg-norm);
+    color: var(--blue-font-norm);
+}
+
+.Blue.disabled {
+    background: var(--blue-bg-disabled);
+    color: var(--blue-font-disabled);
+}
+
+.BlueSea {
+    background: var(--blue-sea-bg-norm);
+    color: var(--blue-sea-font-norm);
+}
+
+.BlueSea.disabled {
+    background: var(--blue-sea-bg-disabled);
+    color: var(--blue-sea-font-disabled);
+}
+
+.Grey {
+    background: var(--grey-bg-norm);
+    color: var(--grey-font-norm);
+}
+
+.Grey.disabled {
+    background: var(--grey-bg-disabled);
+    color: var(--grey-font-disabled);
+}
+
+.SlateGrey {
+    background: var(--slate-grey-bg-norm);
+    color: var(--slate-grey-font-norm);
+}
+
+.SlateGrey.disabled {
+    background: var(--slate-grey-bg-disabled);
+    color: var(--slate-grey-font-disabled);
+}
+
+.Green {
+    background: var(--green-bg-norm);
+    color: var(--green-font-norm);
+}
+
+.Green.disabled {
+    background: var(--green-bg-disabled);
+    color: var(--green-font-disabled);
+}
+
+.Red {
+    background: var(--red-bg-norm);
+    color: var(--red-font-norm);
+}
+
+.Red.disabled {
+    background: var(--red-bg-disabled);
+    color: var(--red-font-disabled);
+}
+
+.Yellow {
+    background: var(--yellow-bg-norm);
+    color: var(--yellow-font-norm);
+}
+
+.Yellow.disabled {
+    background: var(--yellow-bg-disabled);
+    color: var(--yellow-font-disabled);
+}
+
+.Dark {
+    background: var(--dark-bg-norm);
+    color: var(--dark-font-norm);
+}
+
+.Dark.disabled {
+    background: var(--dark-bg-disabled);
+    color: var(--dark-font-disabled);
+}

@@ -1,0 +1,35 @@
+<div class="side-menu-item"
+     [ngClass]="{
+      'active': isSelected,
+      'xsm': size == sizeEnum.xsm,
+      'sm': size == sizeEnum.sm,
+      'lg': size == sizeEnum.lg,
+      'disabled': menuItemListObject.sideMenuItemParam.isDisabled
+     }"
+     [ngStyle]="{
+      'padding-left': menuItemListObject.nestingLevel * 10 + 'px'
+     }"
+     (click)="MenuItemClickHandler()"
+     (dblclick)="InnerMenuChevronClick()">
+
+  <div class="side-menu-item-chevron"
+       [ngClass]="{
+        'xsm': size == sizeEnum.xsm,
+        'sm': size == sizeEnum.sm,
+        'lg': size == sizeEnum.lg
+       }"
+  >
+    <div style="height: 100%"
+         *ngIf="menuItemListObject.sideMenuItemParam.children?.length > 0"
+         (click)="InnerMenuChevronClick()">
+      <i *ngIf="!menuItemListObject.childrenIsOpen" class="fa fa-chevron-right" style="font-size: x-small"
+         aria-hidden="true"></i>
+      <i *ngIf="menuItemListObject.childrenIsOpen" class="fa fa-chevron-down" style="font-size: x-small"
+         aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="side-menu-item-title">
+    {{menuItemListObject.sideMenuItemParam.menuItemTitle}}
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="menubar-container"
+     (click)="MenubarClickedHandler()">
+
+  <bs-menubar-item
+      *ngFor="let item of menubar.menuItems"
+      [menubarItem]="item"
+  ></bs-menubar-item>
+
+</div>

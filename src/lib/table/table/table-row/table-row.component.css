@@ -1,0 +1,82 @@
+.table-row-container {
+    box-sizing: border-box;
+    border-bottom: 1px solid dimgray;
+    height: var(--std-height);
+    font-size: var(--std-fontsize);
+    font-weight: var(--std-fontweight);
+    line-height: var(--std-height);
+}
+
+.table-row-container.xsm {
+    height: var(--xsm-height);
+    font-size: var(--xsm-fontsize);
+    font-weight: var(--xsm-fontweight);
+    line-height: var(--xsm-height);
+}
+
+.table-row-container.sm {
+    height: var(--sm-height);
+    font-size: var(--sm-fontsize);
+    font-weight: var(--sm-fontweight);
+    line-height: var(--sm-height);
+}
+
+.table-row-container.lg {
+    height: var(--lg-height);
+    font-size: var(--lg-fontsize);
+    font-weight: var(--lg-fontweight);
+    line-height: var(--lg-height);
+}
+
+.table-row-container.Light:hover {
+    background-color: var(--light-bg-hover);
+}
+
+.table-row-container.Red:hover {
+    background-color: var(--red-bg-hover-light);
+}
+
+.table-row-container.Grey:hover {
+    background-color: var(--grey-bg-hover-light);
+}
+
+.table-row-container.SlateGrey.selected {
+    background-color: var(--slate-grey-bg-active);
+    color: var(--slate-grey-font-norm);
+}
+
+.table-row-container.SlateGrey.selected:hover {
+    background-color: var(--slate-grey-bg-active-hover);
+}
+
+.table-row-container.SlateGrey:hover {
+    background-color: var(--slate-grey-bg-hover-light);
+}
+
+.table-row-container.Blue:hover {
+    background-color: var(--blue-bg-hover-light);
+}
+
+.table-row-container.BlueSea:hover {
+    background-color: var(--blue-sea-bg-hover-light);
+}
+
+.table-row-container.Green:hover {
+    background-color: var(--green-bg-hover-light);
+}
+
+.table-row-container.Yellow:hover {
+    background-color: var(--yellow-bg-hover-light);
+}
+
+.table-row-container.Red:hover {
+    background-color: var(--red-bg-hover-light);
+}
+
+.table-row-container.Dark:hover {
+    background-color: var(--dark-bg-hover-light);
+}
+
+.table-row-container.last {
+    border-bottom: none;
+}

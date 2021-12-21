@@ -1,0 +1,32 @@
+<div class="dropdown-menu-item-container"
+     [class]="dropdownMenuItem.color"
+     [ngClass]="{
+        'bottom-divider': dropdownMenuItem.bottomDivider,
+        'disabled': dropdownMenuItem.disabled(data),
+        'lg': dropdownMenuItem.size === sizeEnum.lg,
+        'sm': dropdownMenuItem.size === sizeEnum.sm,
+        'xsm': dropdownMenuItem.size === sizeEnum.xsm
+     }">
+
+  <span class="dropdown-menu-item-icon"
+        [ngClass]="{
+          'lg': dropdownMenuItem.size === sizeEnum.lg,
+          'sm': dropdownMenuItem.size === sizeEnum.sm,
+          'xsm': dropdownMenuItem.size === sizeEnum.xsm
+        }">
+    {{dropdownMenuItem.icon}}
+  </span>
+
+  <div class="dropdown-menu-item-title">
+      <span>
+        {{dropdownMenuItem.tile}}
+      </span>
+  </div>
+  <div class="dropdown-menu-item-arrow">
+    <div
+        *ngIf="dropdownMenuItem.innerMenu">
+      <i class="fa fa-caret-right"></i>
+
+    </div>
+  </div>
+</div>

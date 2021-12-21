@@ -1,0 +1,53 @@
+.tab-header-item-container {
+  border-top: 1px solid dimgray;
+  border-left: 1px solid dimgray;
+  border-bottom: 1px solid dimgray;
+  height: var(--std-height);
+  line-height: var(--std-height);
+  font-size: var(--std-fontsize);
+  font-weight: var(--std-fontweight);
+  padding: 0 calc(var(--std-height) / 4);
+  cursor: default;
+  user-select: none;
+}
+
+.tab-header-item-container.lg {
+  height: var(--lg-height);
+  line-height: var(--lg-height);
+  font-size: var(--lg-fontsize);
+  font-weight: var(--lg-fontweight);
+  padding: 0 calc(var(--lg-height) / 4);
+}
+
+.tab-header-item-container.sm {
+  height: var(--sm-height);
+  line-height: var(--sm-height);
+  font-size: var(--sm-fontsize);
+  font-weight: var(--sm-fontweight);
+  padding: 0 calc(var(--sm-height) / 4);
+}
+
+.tab-header-item-container.xsm {
+  height: var(--xsm-height);
+  line-height: var(--xsm-height);
+  font-size: var(--xsm-fontsize);
+  font-weight: var(--xsm-fontweight);
+  padding: 0 calc(var(--xsm-height) / 4);
+}
+
+.tab-header-item-container.SlateGrey {
+  background-color: var(--slate-grey-bg-light);
+}
+
+.tab-header-item-container.SlateGrey:hover {
+  background-color: var(--slate-grey-bg-hover-light);
+}
+
+.tab-header-item-container.active {
+  border-bottom: 1px solid rgba(105, 105, 105, 0);
+  background-color: inherit;
+}
+
+.tab-header-item-container.active:hover {
+  background-color: inherit;
+}

@@ -1,0 +1,30 @@
+.table-header-item-container {
+    display: inline-block;
+    cursor: default;
+    position: relative;
+    user-select: none;
+    border-right: 1px solid dimgray;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.table-column-sens-divider {
+    width: 3px;
+    /*background-color: orange;*/
+    opacity: .4;
+    cursor: col-resize
+}
+
+.table-header-item-container.last {
+    border-right: none;
+}
+
+.table-header-item-value {
+    margin-left: 3%;
+    flex: 1
+}
+
+.table-header-item-sort-arrow {
+    margin-right: 3%;
+}

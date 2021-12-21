@@ -1,0 +1,84 @@
+.menubar-item-container {
+  display: inline-block;
+  padding: 0 calc(var(--std-height) / 4);
+  height: var(--std-height);
+  font-size: var(--std-fontsize);
+  font-weight: var(--std-fontweight);
+  line-height: var(--std-height);
+  cursor: default;
+  user-select: none;
+}
+
+.menubar-item-container.lg {
+  height: var(--lg-height);
+  font-size: var(--lg-fontsize);
+  font-weight: var(--lg-fontweight);
+  line-height: var(--lg-height);
+  padding: 0 calc(var(--lg-height) / 4);
+}
+
+.menubar-item-container.sm {
+  height: var(--sm-height);
+  font-size: var(--sm-fontsize);
+  font-weight: var(--sm-fontweight);
+  line-height: var(--sm-height);
+  padding: 0 calc(var(--sm-height) / 4);
+}
+
+.menubar-item-container.xsm {
+  height: var(--xsm-height);
+  font-size: var(--xsm-fontsize);
+  font-weight: var(--xsm-fontweight);
+  line-height: var(--xsm-height);
+  padding: 0 calc(var(--xsm-height) / 4);
+}
+
+
+.menubar-item-container.Light:hover {
+  background-color: var(--light-bg-hover);
+}
+
+.menubar-item-container.Red:hover {
+  background-color: var(--red-bg-hover-light);
+}
+
+.menubar-item-container.Grey:hover {
+  background-color: var(--grey-bg-hover-light);
+}
+
+.menubar-item-container.SlateGrey.selected {
+  background-color: var(--slate-grey-bg-active);
+  color: var(--slate-grey-font-norm);
+}
+
+.menubar-item-container.SlateGrey.selected:hover {
+  background-color: var(--slate-grey-bg-active-hover);
+}
+
+.menubar-item-container.SlateGrey:hover {
+  background-color: var(--slate-grey-bg-hover-light);
+}
+
+.menubar-item-container.Blue:hover {
+  background-color: var(--blue-bg-hover-light);
+}
+
+.menubar-item-container.BlueSea:hover {
+  background-color: var(--blue-sea-bg-hover-light);
+}
+
+.menubar-item-container.Green:hover {
+  background-color: var(--green-bg-hover-light);
+}
+
+.menubar-item-container.Yellow:hover {
+  background-color: var(--yellow-bg-hover-light);
+}
+
+.menubar-item-container.Red:hover {
+  background-color: var(--red-bg-hover-light);
+}
+
+.menubar-item-container.Dark:hover {
+  background-color: var(--dark-bg-hover-light);
+}

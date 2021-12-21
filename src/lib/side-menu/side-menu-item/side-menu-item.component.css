@@ -1,0 +1,88 @@
+.side-menu-item {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 28px;
+  font-weight: 500;
+  font-size: medium;
+  user-select: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  cursor: default;
+  color: #343434;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.side-menu-item.disabled {
+  color: #a3a3a3;
+}
+
+.side-menu-item.disabled:hover {
+  border-color: transparent;
+}
+
+.side-menu-item.active {
+  background-image: linear-gradient(#a8d1d2, #2fa4ad);
+  border: 1px solid #2fa4ad;
+}
+
+.side-menu-item.active:hover {
+  border: 1px solid #2fa4ad;
+}
+
+.side-menu-item:hover {
+  border: 1px solid #2fa4ad;
+}
+
+/*.side-menu-item:active {*/
+/*  background-image: linear-gradient(#a8d1d2, #2fa4ad);*/
+/*  border: 1px solid #2fa4ad;*/
+/*}*/
+
+.side-menu-item.xsm {
+  height: 20px;
+  font-weight: normal;
+  font-size: small;
+}
+
+.side-menu-item.sm {
+  height: 24px;
+  font-weight: normal;
+  font-size: small;
+}
+
+.side-menu-item.lg {
+  height: 32px;
+  font-weight: 600;
+  font-size: large;
+}
+
+.side-menu-item-chevron {
+  width: 10px;
+  line-height: 20px;
+  text-align: center
+}
+
+.side-menu-item-chevron.xsm {
+  line-height: 18px;
+}
+
+.side-menu-item-chevron.sm {
+  line-height: 18px;
+}
+
+.side-menu-item-chevron.lg {
+  line-height: 22px;
+}
+
+.side-menu-item-title {
+  flex: 1;
+  padding-left: 2px
+}
+
+.side-menu-item-title:hover {
+  /*background-image: linear-gradient(#cefbfc, #3ccdd7);*/
+}

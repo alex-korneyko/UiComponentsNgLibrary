@@ -1,0 +1,16 @@
+<div class="title-container" [class]="color" [class.disabled]="disabled">
+  <span class="title-container__text"
+    [ngClass]="{
+    'xsm': size === sizeValues.xsm && (titlePosition === titlePositionValues.Left || titlePosition === titlePositionValues.Right),
+    'sm': size === sizeValues.sm && (titlePosition === titlePositionValues.Left || titlePosition === titlePositionValues.Right),
+    'lg': size === sizeValues.lg && (titlePosition === titlePositionValues.Left || titlePosition === titlePositionValues.Right),
+
+    'v-xsm': size === sizeValues.xsm && (titlePosition === titlePositionValues.Top || titlePosition === titlePositionValues.Bottom),
+    'v-sm': size === sizeValues.sm && (titlePosition === titlePositionValues.Top || titlePosition === titlePositionValues.Bottom),
+    'v-std': size == null && (titlePosition === titlePositionValues.Top || titlePosition === titlePositionValues.Bottom),
+    'v-lg': size === sizeValues.lg && (titlePosition === titlePositionValues.Top || titlePosition === titlePositionValues.Bottom)
+    }"
+  >
+    <ng-content></ng-content>
+  </span>
+</div>

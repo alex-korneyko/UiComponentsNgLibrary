@@ -1,0 +1,23 @@
+<div class="group-panel-container"
+     [ngClass]="size">
+  <div class="group-panel-border-area"
+       [class]="color"
+       [ngClass]="{
+        'lg': size === Size.lg,
+        'sm': size === Size.sm,
+        'xsm': size === Size.xsm
+       }"
+  >
+    <div class="group-panel-header"
+         *ngIf="title"
+         [ngClass]="size">
+      <bs-input-title
+        [color]="color"
+        [size]="size"
+        [titlePosition]="titlePosition.Top">
+        {{title}}
+      </bs-input-title>
+    </div>
+    <ng-content></ng-content>
+  </div>
+</div>

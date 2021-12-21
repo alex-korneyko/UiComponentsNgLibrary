@@ -1,0 +1,40 @@
+<div class="table-header-container"
+     [ngClass]="{
+        'xsm': size === sizeEnum.xsm,
+        'sm': size === sizeEnum.sm,
+        'lg': size === sizeEnum.lg
+     }"
+     [class]="color">
+
+    <div class="table-header-items">
+        <bs-table-header-item
+            *ngFor="let column of table.columnSet.columns; let first = first; let last = last"
+            [column]="column"
+            [isFirst]="first"
+            [isLast]="last"
+            (headerColumnClick)="HeaderColumnClickHandler($event)"
+            (dragenter)="DragEnterHandler(column)"
+            (drop)="DropHandler(column)"
+            (bsDragStart)="DragStart($event)"
+            (dragend)="DragEnd()"
+            (columnStartResize)="ColumnStartResize($event)"
+            (columnEndResize)="ColumnEndResize()"
+            (resizeOverColumn)="ColumnResize($event)"
+        ></bs-table-header-item>
+    </div>
+
+    <div class="table-settings" title="Table settings"
+         [bsDropdown]="{dropdownComponent: tableSettings, data: table}"
+         [class]="color"
+         [ngClass]="{
+            'disabled': !enableSettings
+         }">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+    </div>
+
+    <bs-dropdown
+        #tableSettings
+        [content]="tableSettingsComponent"
+        [direction]="dropdownDirectionEnum.Bottom"
+    ></bs-dropdown>
+</div>

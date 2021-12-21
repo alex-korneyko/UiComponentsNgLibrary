@@ -1,0 +1,25 @@
+<div class="table-settings-container" (click)="$event.stopPropagation()">
+  <div style="text-align: center">
+    <span [bsSize]="data?.size">Table settings:</span>
+  </div>
+  <hr style="margin: 2px">
+
+  <bs-group-panel
+      [title]="'Columns'"
+      [size]="data?.size">
+    <div *ngFor="let column of data?.columnSet.columns">
+      <div style="display: flex">
+        <div style="flex: 1">
+          <bs-checkbox
+              [title]="column.columnName"
+              [bsModel]="!column.hidden"
+              (bsModelChange)="ChangeHiddenEvent(column, $event)"
+              [size]="data.size"
+              [titlePosition]="TitlePosition.Right"
+          ></bs-checkbox>
+        </div>
+        <span [bsSize]="data.size">(width:{{Math.round(column.columnWidthPercent)}}%)</span>
+      </div>
+    </div>
+  </bs-group-panel>
+</div>

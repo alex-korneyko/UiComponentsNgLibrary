@@ -1,0 +1,47 @@
+<div class="multiselect-container">
+  <bs-input-title *ngIf="titlePosition == titlePositionValues.Top"
+                  [size]="size"
+                  [titlePosition]="titlePosition"
+                  [color]="color"
+                  [disabled]="disabled">
+    {{title}}
+  </bs-input-title>
+
+  <div style="width: 100%;">
+
+    <div class="select-container" style="flex: 1"
+         [class.disabled]="disabled"
+         [class]="color">
+      <select
+        multiple
+        [size]="rowsCount"
+        [disabled]="disabled"
+        [ngModel]="bsModel"
+        (ngModelChange)="modelChanged($event)"
+        [title]="prompt"
+      >
+        <option
+          *ngFor="let value of values"
+          [title]="value.prompt"
+          [disabled]="value.disabled"
+          [ngClass]="{
+            'xsm': size === sizeValues.xsm,
+            'sm': size === sizeValues.sm,
+            'lg': size === sizeValues.lg
+           }"
+        >
+          {{value.text}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <bs-input-title *ngIf="titlePosition == titlePositionValues.Bottom"
+                  [size]="size"
+                  [titlePosition]="titlePosition"
+                  [color]="color"
+                  [disabled]="disabled">
+    {{title}}
+  </bs-input-title>
+</div>
+

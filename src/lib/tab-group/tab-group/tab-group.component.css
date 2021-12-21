@@ -1,0 +1,17 @@
+.tab-group-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-group-header {
+
+}
+
+.tab-group-content {
+  flex: 1;
+  border-bottom: 1px solid dimgray;
+  border-left: 1px solid dimgray;
+  border-right: 1px solid dimgray;
+  overflow-y: auto;
+}

@@ -1,0 +1,120 @@
+.dropdown-menu-item-container {
+  height: var(--std-height);
+  font-size: var(--std-fontsize);
+  font-weight: var(--std-fontweight);
+  line-height: var(--std-height);
+  cursor: default;
+  user-select: none;
+  display: flex;
+  padding-right: 5px;
+  box-sizing: initial;
+}
+
+.dropdown-menu-item-container.bottom-divider {
+  border-bottom: 1px solid dimgray;
+}
+
+.dropdown-menu-item-title {
+  text-align: left;
+  flex: 1;
+}
+
+.dropdown-menu-item-icon {
+  margin: 0 3px 0 5px;
+  width: var(--std-height);
+}
+
+.dropdown-menu-item-icon.lg {
+  width: var(--lg-height);
+}
+
+.dropdown-menu-item-icon.sm {
+  width: var(--sm-height);
+}
+
+.dropdown-menu-item-icon.xsm {
+  width: var(--xsm-height);
+}
+
+.dropdown-menu-item-arrow {
+  width: var(--std-height);
+  text-align: right
+}
+
+.dropdown-menu-item-container.xsm {
+  height: var(--xsm-height);
+  font-size: var(--xsm-fontsize);
+  font-weight: var(--xsm-fontweight);
+  line-height: var(--xsm-height);
+}
+
+.dropdown-menu-item-container.sm {
+  height: var(--sm-height);
+  font-size: var(--sm-fontsize);
+  font-weight: var(--sm-fontweight);
+  line-height: var(--sm-height);
+}
+
+.dropdown-menu-item-container.lg {
+  height: var(--lg-height);
+  font-size: var(--lg-fontsize);
+  font-weight: var(--lg-fontweight);
+  line-height: var(--lg-height);
+}
+
+.dropdown-menu-item-container.Light:hover {
+  background-color: var(--light-bg-hover);
+}
+
+.dropdown-menu-item-container.Red:hover {
+  background-color: var(--red-bg-hover-light);
+}
+
+.dropdown-menu-item-container.Grey:hover {
+  background-color: var(--grey-bg-hover-light);
+}
+
+.dropdown-menu-item-container.SlateGrey.selected {
+  background-color: var(--slate-grey-bg-active);
+  color: var(--slate-grey-font-norm);
+}
+
+.dropdown-menu-item-container.SlateGrey.selected:hover {
+  background-color: var(--slate-grey-bg-active-hover);
+}
+
+.dropdown-menu-item-container.SlateGrey:hover {
+  background-color: var(--slate-grey-bg-hover-light);
+}
+
+.dropdown-menu-item-container.Blue:hover {
+  background-color: var(--blue-bg-hover-light);
+}
+
+.dropdown-menu-item-container.BlueSea:hover {
+  background-color: var(--blue-sea-bg-hover-light);
+}
+
+.dropdown-menu-item-container.Green:hover {
+  background-color: var(--green-bg-hover-light);
+}
+
+.dropdown-menu-item-container.Yellow:hover {
+  background-color: var(--yellow-bg-hover-light);
+}
+
+.dropdown-menu-item-container.Red:hover {
+  background-color: var(--red-bg-hover-light);
+}
+
+.dropdown-menu-item-container.Dark:hover {
+  background-color: var(--dark-bg-hover-light);
+}
+
+.dropdown-menu-item-container.disabled {
+  color: gray;
+}
+
+.dropdown-menu-item-container.disabled:hover {
+  background-color: inherit;
+}

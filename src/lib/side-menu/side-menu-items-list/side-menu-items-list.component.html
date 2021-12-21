@@ -1,0 +1,22 @@
+<div class="side-menu-list"
+     [ngStyle]="{
+        'width': menuWidth + 'px'
+       }">
+  <div *ngFor="let menuItemObject of sideMenuListObjects">
+    <bs-side-menu-item
+      *ngIf="menuItemObject.parentMenu == null || menuItemObject.parentMenu.childrenIsOpen"
+      [menuItemListObject]="menuItemObject"
+      [isSelected]="menuItemObject.sideMenuItemParam === selectedMenuItem"
+      [size]="size"
+      (menuItemClick)="MenuItemClickHandler($event)"
+    ></bs-side-menu-item>
+  </div>
+</div>
+
+<div style="position: absolute; height: 100%; top: 0; left: 0; opacity: 0"
+     *ngIf="separatorDragging"
+     (dragover)="DragOverLeftSideHandler($event)"
+     [ngStyle]="{
+      'width': menuWidth + 'px'
+     }"
+></div>

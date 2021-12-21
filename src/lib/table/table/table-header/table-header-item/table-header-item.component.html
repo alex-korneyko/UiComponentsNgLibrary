@@ -1,0 +1,38 @@
+<div class="table-header-item-container"
+     *ngIf="!column.hidden"
+     [ngStyle]="{
+        'width': (column.columnWidthPercent + '%')
+     }"
+     (click)="TableHeaderClick()">
+
+    <div style="display: flex" >
+
+        <div class="table-column-sens-divider" draggable="true"
+             *ngIf="!column.IsFistVisible()"
+             (dragstart)="ResizeDragStart('left', $event)"
+             (dragend)="ResizeDragEnd()"
+        ></div>
+
+        <div style="flex: 1; display: flex" (dragover)="DragOverHandler($event)">
+
+            <span class="table-header-item-value" draggable="true"
+                  [title]="column.prompt ? column.prompt : column.columnName"
+                  (dragstart)="ColumnDragStart($event)">
+                {{column.columnName}}
+            </span>
+
+            <div class="table-header-item-sort-arrow">
+                <i class="fa fa-sort-desc" aria-hidden="true"
+                   *ngIf="column.sortDirection === sortDirectionEnum.ToDown"></i>
+                <i class="fa fa-sort-asc" aria-hidden="true"
+                   *ngIf="column.sortDirection === sortDirectionEnum.ToUp"></i>
+            </div>
+        </div>
+
+        <div class="table-column-sens-divider" draggable="true"
+             *ngIf="!column.IsLastVisible()"
+             (dragstart)="ResizeDragStart('right', $event)"
+             (dragend)="ResizeDragEnd()"
+        ></div>
+    </div>
+</div>

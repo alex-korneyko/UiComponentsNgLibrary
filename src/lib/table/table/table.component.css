@@ -1,0 +1,8 @@
+.table-container {
+    border: 1px solid dimgray;
+    border-radius: 2px;
+}
+
+.table-data-container {
+    overflow-y: scroll;
+}

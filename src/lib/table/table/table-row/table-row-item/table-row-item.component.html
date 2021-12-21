@@ -1,0 +1,13 @@
+<div class="table-row-item-container"
+     *ngIf="!tableRowItem.column.hidden"
+     [ngStyle]="{
+        'width': (tableRowItem.column.columnWidthPercent + '%')
+     }">
+
+    <div *ngIf="tableRowItem.value != null" class="table-row-item-value">
+        <span class="table-row-item-value-span">{{tableRowItem.value}}</span>
+    </div>
+    <div *ngIf="tableRowItem.value == null" class="table-row-item-value" style="opacity: 0">
+        <span style="margin: 0">_</span>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.dropdown-dir-container {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+}
+
+.dropdown-dir-container.show {
+  display: block;
+}

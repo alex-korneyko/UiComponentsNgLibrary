@@ -1,0 +1,28 @@
+<div *ngIf="!dropdownMenuItem.hidden(data)"
+     (mouseenter)="MenuItemMouseEnter()"
+     (click)="ItemClickHandler($event)">
+
+  <div *ngIf="dropdownMenuItem.innerMenu else withoutInnerMenu"
+       [bsDropdownMenu]="dropdownMenuItem.innerMenu ? {menuComponent: innerMenu, data: data} : null"
+       [bsDropdownMenuEventType]="dropdownEventTypeEnum.MouseEnter">
+
+    <bs-dropdown-menu-item-content
+        [dropdownMenuItem]="dropdownMenuItem"
+        [data]="data"
+    ></bs-dropdown-menu-item-content>
+
+    <bs-dropdown-menu #innerMenu
+                      [dropdownMenu]="dropdownMenuItem.innerMenu"
+                      [dropdownDirection]="dropdownDirectionEnum.Right"
+                      [isSingleton]="false"
+                      (dropdownOnShow)="DropdownOnShow($event)"
+    ></bs-dropdown-menu>
+  </div>
+
+  <ng-template #withoutInnerMenu>
+    <bs-dropdown-menu-item-content
+        [dropdownMenuItem]="dropdownMenuItem"
+        [data]="data"
+    ></bs-dropdown-menu-item-content>
+  </ng-template>
+</div>

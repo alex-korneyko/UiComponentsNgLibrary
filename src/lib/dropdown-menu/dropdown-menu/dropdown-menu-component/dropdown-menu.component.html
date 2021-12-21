@@ -1,0 +1,12 @@
+<bs-dropdown #menuDropdownComponent
+             [isSingleton]="isSingleton"
+             [direction]="dropdownDirection"
+             [content]="dropdownMenuContentComponent"
+             [shiftY]="shiftY"
+             [shiftX]="shiftX"
+             (componentCreated)="DropdownComponentCreatedHandler($event)"
+             (instanceCreated)="DropdownInstanceCreatedHandler($event)"
+             (onShow)="DropdownOnShowHandler($event)"
+             (onHide)="DropdownOnHideHandler($event)"
+             (contextmenu)="PreventDefaults($event)"
+></bs-dropdown>

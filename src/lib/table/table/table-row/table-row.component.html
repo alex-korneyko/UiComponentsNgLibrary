@@ -1,0 +1,19 @@
+<div class="table-row-container"
+     [ngClass]="{
+        'last': isLastRow,
+        'selected': isSelected,
+        'xsm': size === sizeEnum.xsm,
+        'sm': size === sizeEnum.sm,
+        'lg': size === sizeEnum.lg
+     }"
+     [class]="color"
+     (click)="RowClick($event)"
+     (dblclick)="DblRowClick($event)"
+>
+
+    <bs-table-row-item
+        *ngFor="let item of tableRow.rowItems; let last = last"
+        [tableRowItem]="item"
+        [isLastItem]="last"
+    ></bs-table-row-item>
+</div>

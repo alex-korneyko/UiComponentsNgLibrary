@@ -1,0 +1,29 @@
+.table-settings-container {
+  width: 250px;
+  padding: 10px;
+  background-color: lightgray;
+  border: 1px solid dimgray;
+  border-radius: 3px;
+  color: black;
+}
+
+.xsm {
+  height: var(--xsm-height);
+  font-size: var(--xsm-fontsize);
+  font-weight: var(--xsm-fontweight);
+  line-height: var(--xsm-height);
+}
+
+.sm {
+  height: var(--sm-height);
+  font-size: var(--sm-fontsize);
+  font-weight: var(--sm-fontweight);
+  line-height: var(--sm-height);
+}
+
+.lg {
+  height: var(--lg-height);
+  font-size: var(--lg-fontsize);
+  font-weight: var(--lg-fontweight);
+  line-height: var(--lg-height);
+}

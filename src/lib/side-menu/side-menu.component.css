@@ -1,0 +1,20 @@
+.side-menu-container {
+  height: 100%;
+  width: 100%;
+  position: relative
+}
+
+.side-menu-separator {
+  width: 3px;
+  background-color: dimgray;
+  cursor: col-resize;
+  position: absolute;
+  top: 0;
+  height: 100%
+}
+
+.side-menu-content-area {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
