@@ -1,6 +1,7 @@
 import {SortDirection} from './sort-direction.enum';
 import {TableColumnSet} from './table-column-set';
 import {TableData} from './table-data';
+import {ColumnType} from "./column-type";
 
 export class TableColumn<T extends TableData> {
   private readonly _columnName: string;
@@ -11,6 +12,7 @@ export class TableColumn<T extends TableData> {
   private _columnWidthPercent = 0;
   private _sortDirection: SortDirection = SortDirection.None;
   private _hidden = false;
+  private _columnType = ColumnType.String;
 
   constructor(columnName: string, value: (data: T) => any) {
     this._columnName = columnName;
@@ -20,6 +22,15 @@ export class TableColumn<T extends TableData> {
   SetWidthPercent(width: number): TableColumn<T> {
     this._columnWidthPercent = width;
     return this;
+  }
+
+  SetColumnType(type: ColumnType): TableColumn<T> {
+    this._columnType = type;
+    return this;
+  }
+
+  get columnType(): ColumnType {
+    return this._columnType
   }
 
   get columnName(): string {

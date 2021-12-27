@@ -4,10 +4,20 @@
         'width': (tableRowItem.column.columnWidthPercent + '%')
      }">
 
-    <div *ngIf="tableRowItem.value != null" class="table-row-item-value">
-        <span class="table-row-item-value-span">{{tableRowItem.value}}</span>
-    </div>
-    <div *ngIf="tableRowItem.value == null" class="table-row-item-value" style="opacity: 0">
-        <span style="margin: 0">_</span>
-    </div>
+  <div *ngIf="tableRowItem.value != null" class="table-row-item-value">
+    <span class="table-row-item-value-span"
+          *ngIf="tableRowItem.column.columnType == columnType.String"
+          [title]="tableRowItem.value">
+      {{tableRowItem.value}}
+    </span>
+
+    <input type="checkbox" class="table-row-item-value-checkbox" disabled
+           [ngModel]="tableRowItem.value"
+           *ngIf="tableRowItem.column.columnType == columnType.Boolean"
+    >
+
+  </div>
+  <div *ngIf="tableRowItem.value == null" class="table-row-item-value" style="opacity: 0">
+    <span style="margin: 0">_</span>
+  </div>
 </div>

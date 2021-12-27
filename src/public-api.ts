@@ -65,6 +65,7 @@ export * from './lib/table/table-data';
 export * from './lib/table/table-column-set';
 export * from './lib/table/table-column';
 export * from './lib/table/table/table.component';
+export * from './lib/table/column-type';
 
 export * from './lib/directives/directives.module';
 export * from './lib/directives/size.directive';

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TableRowItem} from '../../../table-row-item';
+import {ColumnType} from "../../../column-type";
 
 @Component({
   selector: 'bs-table-row-item',
@@ -16,6 +17,8 @@ export class TableRowItemComponent implements OnInit {
 
   @Input()
   isLastItem: boolean;
+
+  columnType = ColumnType
 
   constructor() { }
 

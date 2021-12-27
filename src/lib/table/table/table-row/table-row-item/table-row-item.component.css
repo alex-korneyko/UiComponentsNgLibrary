@@ -1,24 +1,32 @@
 .table-row-item-container {
-    display: inline-block;
-    cursor: default;
-    /*position: relative;*/
-    user-select: none;
-    border-right: 1px solid dimgray;
-
+  display: inline-block;
+  cursor: default;
+  /*position: relative;*/
+  user-select: none;
+  border-right: 1px solid dimgray;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 .table-row-item-container.last {
-    border-right: none;
+  border-right: none;
 }
 
 .table-row-item-value {
-    margin-left: 3%;
+  margin-left: 3%;
+  display: flex;
+  justify-content: center;
 }
 
 .table-row-item-value-span {
-    margin: 0;
-    display: block;
-    /*overflow: hidden;*/
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  margin: 0;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.table-row-item-value-checkbox {
+  margin: 0;
+  display: inline-block;
 }

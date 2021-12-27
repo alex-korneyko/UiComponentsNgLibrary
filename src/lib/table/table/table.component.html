@@ -14,7 +14,8 @@
              [bsDropdown]="{dropdownComponent: simpleDropdown, data: row.dataItem}"
              [bsDropdownEventType]="dropdownEventType.MouseDoubleClick"
              [bsDropdownMenu]="{menuComponent: testDropdownMenu, data: row.dataItem}"
-             [bsDropdownMenuEventType]="dropdownEventType.MouseContext">
+             [bsDropdownMenuEventType]="dropdownEventType.MouseContext"
+        >
 
             <bs-table-row
                 *ngIf="!row.hidden"
