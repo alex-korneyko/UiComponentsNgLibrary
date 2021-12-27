@@ -1,8 +1,12 @@
 .table-container {
     border: 1px solid dimgray;
     border-radius: 2px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .table-data-container {
     overflow-y: scroll;
+  flex: 1;
 }

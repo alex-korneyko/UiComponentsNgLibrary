@@ -25,6 +25,7 @@
 
     <div class="table-settings" title="Table settings"
          [bsDropdown]="{dropdownComponent: tableSettings, data: table}"
+         [bsDropdownEventType]="dropdownEventTypeEnum.MouseClick"
          [class]="color"
          [ngClass]="{
             'disabled': !enableSettings
