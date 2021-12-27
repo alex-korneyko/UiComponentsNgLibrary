@@ -1,14 +1,30 @@
 <div class="table-row-item-container"
      *ngIf="!tableRowItem.column.hidden"
-     [ngStyle]="{
-        'width': (tableRowItem.column.columnWidthPercent + '%')
-     }">
+     >
 
   <div *ngIf="tableRowItem.value != null" class="table-row-item-value">
     <span class="table-row-item-value-span"
           *ngIf="tableRowItem.column.columnType == columnType.String"
           [title]="tableRowItem.value">
       {{tableRowItem.value}}
+    </span>
+
+    <span class="table-row-item-value-span"
+          *ngIf="tableRowItem.column.columnType == columnType.Date"
+          [title]="tableRowItem.value">
+      {{tableRowItem.value | date:'dd.mm.YYYY'}}
+    </span>
+
+    <span class="table-row-item-value-span"
+          *ngIf="tableRowItem.column.columnType == columnType.Time"
+          [title]="tableRowItem.value">
+      {{tableRowItem.value | date:'hh:mm'}}
+    </span>
+
+    <span class="table-row-item-value-span"
+          *ngIf="tableRowItem.column.columnType == columnType.DateTime"
+          [title]="tableRowItem.value">
+      {{tableRowItem.value | date:'dd.mm.YYYY, hh:mm'}}
     </span>
 
     <input type="checkbox" class="table-row-item-value-checkbox" disabled

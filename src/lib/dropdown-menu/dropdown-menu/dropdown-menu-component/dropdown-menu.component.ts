@@ -53,7 +53,7 @@ export class DropdownMenuComponent<T> implements OnInit {
   }
 
   DropdownComponentCreatedHandler(dropdownComponent: DropdownComponent<any>) {
-    this.dropdownMenu.SetDropdownComponent(dropdownComponent);
+    this.dropdownMenu?.SetDropdownComponent(dropdownComponent);
     this.dropdownComponentCreated.emit(dropdownComponent);
   }
 

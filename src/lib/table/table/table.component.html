@@ -11,8 +11,6 @@
     <div class="table-data-container">
 
         <div *ngFor="let row of table?.rows; let last = last"
-             [bsDropdown]="{dropdownComponent: simpleDropdown, data: row.dataItem}"
-             [bsDropdownEventType]="dropdownEventType.MouseDoubleClick"
              [bsDropdownMenu]="{menuComponent: testDropdownMenu, data: row.dataItem}"
              [bsDropdownMenuEventType]="dropdownEventType.MouseContext"
         >
@@ -30,11 +28,6 @@
         </div>
 
     </div>
-
-    <bs-dropdown #simpleDropdown
-                 [content]="dropdownContent"
-                 [direction]="dropdownDirection"
-    ></bs-dropdown>
 
     <bs-dropdown-menu #testDropdownMenu
                       [dropdownMenu]="dropdownMenu"

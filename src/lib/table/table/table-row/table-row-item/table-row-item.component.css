@@ -1,11 +1,14 @@
 .table-row-item-container {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   cursor: default;
-  /*position: relative;*/
   user-select: none;
   border-right: 1px solid dimgray;
   box-sizing: border-box;
   height: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
 }
 
 .table-row-item-container.last {
@@ -13,20 +16,19 @@
 }
 
 .table-row-item-value {
-  margin-left: 3%;
   display: flex;
   justify-content: center;
+  padding-left: 5%;
+
 }
 
 .table-row-item-value-span {
   margin: 0;
-  display: block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow-x: hidden;
+
+
 }
 
 .table-row-item-value-checkbox {
   margin: 0;
-  display: inline-block;
+  display: block;
 }

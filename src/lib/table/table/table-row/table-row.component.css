@@ -5,6 +5,7 @@
     font-size: var(--std-fontsize);
     font-weight: var(--std-fontweight);
     line-height: var(--std-height);
+  display: flex;
 }
 
 .table-row-container.xsm {

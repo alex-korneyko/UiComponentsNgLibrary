@@ -13,6 +13,9 @@
 
     <bs-table-row-item
         *ngFor="let item of tableRow.rowItems; let last = last"
+        [ngStyle]="{
+        'width': (item.column.columnWidthPercent + '%')
+     }"
         [tableRowItem]="item"
         [isLastItem]="last"
     ></bs-table-row-item>
