@@ -16,6 +16,7 @@ import {TableModule} from './table/table.module';
 import {DropdownModule} from './dropdown/dropdown.module';
 import {MenubarModule} from './menubar/menubar.module';
 import {TabGroupModule} from './tab-group/tab-group.module';
+import {ModalWindowModule} from './modal-window/modal-window.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {TabGroupModule} from './tab-group/tab-group.module';
     DropdownMenuModule,
     TableModule,
     MenubarModule,
-    TabGroupModule
+    TabGroupModule,
+    ModalWindowModule
   ]
 })
 export class AlexAppsUiComponentsModule { }

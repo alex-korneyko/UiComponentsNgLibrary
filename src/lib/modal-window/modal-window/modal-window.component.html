@@ -1,0 +1,32 @@
+<div class="modal-shadow"
+     [ngClass]="{
+      'show': show
+     }"
+     (click)="closeClick()">
+
+  <div class="modal-container"
+       (click)="stopPropagation($event)"
+       [ngStyle]="{
+        'width': size == null ? 'max-content' : size === sizeEnum.lg ? '1200px' : size === sizeEnum.sm ? '600px' : '300px'
+       }"
+  >
+    <div *ngIf="header" class="modal-header-container">
+      <div class="modal-header-text">
+        <span>{{header}}</span>
+      </div>
+      <div class="modal-header-close-button">
+        <button class="btn secondary" (click)="closeClick()">X</button>
+      </div>
+    </div>
+    <div class="modal-body-container">
+      <p *ngIf="text">
+        {{text}}
+      </p>
+      <ng-content></ng-content>
+    </div>
+    <div *ngIf="showFooter" class="modal-footer-container">
+      <button class="btn success" (click)="okFunction(modalData)">Ok</button>
+      <button class="btn secondary" (click)="closeClick()">Cancel</button>
+    </div>
+  </div>
+</div>
