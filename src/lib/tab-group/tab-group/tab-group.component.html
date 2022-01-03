@@ -4,7 +4,11 @@
         [tabGroup]="tabGroup"
     ></bs-tab-header>
   </div>
-  <div #tabContent class="tab-group-content">
-    <ng-template bsTabContent></ng-template>
+
+  <div class="tab-group-content">
+    <lib-tab-content
+      *ngFor="let tab of tabGroup.tabs"
+      [tab]="tab"
+    ></lib-tab-content>
   </div>
 </div>

@@ -77,7 +77,3 @@
 .table-row-container.Dark:hover {
     background-color: var(--dark-bg-hover-light);
 }
-
-.table-row-container.last {
-    border-bottom: none;
-}

@@ -18,9 +18,6 @@ export class TableRowComponent<T extends TableData> implements OnInit {
   tableRow: TableRow<T>
 
   @Input()
-  isLastRow: boolean;
-
-  @Input()
   size: Size
 
   @Input()

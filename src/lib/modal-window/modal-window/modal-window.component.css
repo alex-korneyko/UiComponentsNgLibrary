@@ -7,6 +7,7 @@
   height: 100vh;
   display: none;
   background-color: rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
 }
 
 .modal-shadow.show {
@@ -15,7 +16,7 @@
 
 .modal-container {
   position: relative;
-  margin: 100px auto;
+  margin: 5rem auto;
   display: flex;
   flex-direction: column;
   z-index: 1100;
@@ -23,6 +24,10 @@
   background-color: #eeeeee;
   border-radius: 5px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.modal-container.scrollable {
+  height: calc(100% - 10rem);
 }
 
 .modal-header-container {
@@ -38,11 +43,19 @@
   padding: 0 15px;
 }
 
+.modal-body-container.scrollable {
+  overflow-y: auto;
+}
+
 .modal-footer-container {
   display: flex;
   justify-content: flex-end;
   padding: 5px;
   border-top: 1px solid dimgray;
+}
+
+.modal-footer-container > * {
+  margin-left: 10px;
 }
 
 button {

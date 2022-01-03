@@ -12,7 +12,7 @@ import {Size} from '../../../../size.enum';
 })
 export class TabHeaderItemComponent implements OnInit {
 
-  @Input() tabHeaderItem: Tab;
+  @Input() tabHeaderItem: Tab<any>;
 
   Size = Size;
 

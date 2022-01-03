@@ -8,7 +8,7 @@ import {Tab} from './tab';
   templateUrl: './tab-group.component.html',
   styleUrls: ['./tab-group.component.css']
 })
-export class TabGroupComponent implements OnInit {
+export class TabGroupComponent<T> implements OnInit {
 
   @ViewChild("tabContent")
   tabContentContainer: ElementRef;
@@ -16,11 +16,11 @@ export class TabGroupComponent implements OnInit {
   @ViewChild(TabContentDirective, {static: true})
   tabContentHost: TabContentDirective;
 
-  @Input() tabGroup: TabGroup;
+  @Input() tabGroup: TabGroup<T>;
 
-  @Output() onActiveTab = new EventEmitter<Tab>();
+  @Output() onActiveTab = new EventEmitter<Tab<T>>();
 
-  @Output() onHideTab = new EventEmitter<Tab>();
+  @Output() onHideTab = new EventEmitter<Tab<T>>();
 
   constructor(public componentFactoryResolver: ComponentFactoryResolver) { }
 

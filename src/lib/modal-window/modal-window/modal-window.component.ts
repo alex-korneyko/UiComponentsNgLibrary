@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Size} from '../../size.enum';
+import {ColorStyle} from '../../color-style.enum';
+import {Button} from '../../button/button/button';
 
 @Component({
   selector: 'lib-modal-window',
@@ -31,7 +33,14 @@ export class ModalWindowComponent implements OnInit {
   @Input()
   size: Size
 
+  @Input()
+  scrollable = false;
+
+  @Input()
+  buttons = new Array<Button>();
+
   sizeEnum = Size;
+  colorStyle = ColorStyle
 
   @Input()
   okFunction: (data?: any) => void;

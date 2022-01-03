@@ -11,7 +11,7 @@ import {TabGroup} from '../tab-group';
 })
 export class TabHeaderComponent implements OnInit {
 
-  @Input() tabGroup: TabGroup;
+  @Input() tabGroup: TabGroup<any>;
 
   constructor() { }
 

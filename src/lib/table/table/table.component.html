@@ -10,7 +10,7 @@
 
     <div class="table-data-container">
 
-        <div *ngFor="let row of table?.rows; let last = last"
+        <div *ngFor="let row of table?.rows"
              [bsDropdownMenu]="{menuComponent: testDropdownMenu, data: row.dataItem}"
              [bsDropdownMenuEventType]="dropdownEventType.MouseContext"
         >
@@ -18,7 +18,6 @@
             <bs-table-row
                 *ngIf="!row.hidden"
                 [tableRow]="row"
-                [isLastRow]="last"
                 [isSelected]="table.RowIsSelected(row.dataItem)"
                 [size]="table.size"
                 [color]="table.color"

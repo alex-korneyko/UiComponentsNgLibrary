@@ -1,0 +1,9 @@
+<div class="tab-content-container"
+     [ngStyle]="{
+      'display': tab.isActive ? 'block' : 'none'
+     }"
+>
+  <div #tabContent>
+    <ng-template bsTabContent></ng-template>
+  </div>
+</div>

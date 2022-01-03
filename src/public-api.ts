@@ -11,6 +11,7 @@ export * from './lib/text-input-type.enum';
 
 export * from './lib/button/button.module';
 export * from './lib/button/button/button.component';
+export * from './lib/button/button/button';
 
 export * from './lib/side-menu/side-menu.module';
 export * from './lib/side-menu/side-menu.component';

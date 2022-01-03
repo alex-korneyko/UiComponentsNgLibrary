@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Size} from '../../size.enum';
 import {ColorStyle} from '../../color-style.enum';
+import {Button} from './button';
 
 @Component({
   selector: 'bs-button',
@@ -11,6 +12,9 @@ import {ColorStyle} from '../../color-style.enum';
   ]
 })
 export class ButtonComponent implements OnInit {
+
+  @Input()
+  button: Button | undefined;
 
   @Input()
   size: Size;
@@ -37,5 +41,8 @@ export class ButtonComponent implements OnInit {
 
   BtnClick($event: MouseEvent) {
     this.clickEvent.emit($event);
+    if (this.button && this.button.clickHandler) {
+      this.button.clickHandler(this.button.data);
+    }
   }
 }

@@ -1,22 +1,22 @@
 <button class="bs-btn"
-        [disabled]="disabled"
+        [disabled]="button? button.disabled : disabled"
         (click)="BtnClick($event)"
         [ngClass]="{
-          'xsm': size === componentSizes.xsm,
-          'sm': size === componentSizes.sm,
-          'lg': size === componentSizes.lg,
-          'light': color === colorStyle.Light,
-          'blue': color === colorStyle.Blue,
-          'blue-sea': color === colorStyle.BlueSea,
-          'grey': color === colorStyle.Grey,
-          'slate-grey': color === colorStyle.SlateGrey,
-          'green': color === colorStyle.Green,
-          'red': color === colorStyle.Red,
-          'yellow': color === colorStyle.Yellow,
-          'dark': color === colorStyle.Dark
+          'xsm': button ? button.size === componentSizes.xsm : size === componentSizes.xsm,
+          'sm': button ? button.size === componentSizes.sm : size === componentSizes.sm,
+          'lg': button ? button.size === componentSizes.lg : size === componentSizes.lg,
+          'light': button ? button.color === colorStyle.Light : color === colorStyle.Light,
+          'blue': button ? button.color === colorStyle.Blue : color === colorStyle.Blue,
+          'blue-sea': button ? button.color === colorStyle.BlueSea : color === colorStyle.BlueSea,
+          'grey': button ? button.color === colorStyle.Grey : color === colorStyle.Grey,
+          'slate-grey': button ? button.color === colorStyle.SlateGrey : color === colorStyle.SlateGrey,
+          'green': button ? button.color === colorStyle.Green : color === colorStyle.Green,
+          'red': button ? button.color === colorStyle.Red : color === colorStyle.Red,
+          'yellow': button ? button.color === colorStyle.Yellow : color === colorStyle.Yellow,
+          'dark': button ? button.color === colorStyle.Dark : color === colorStyle.Dark
         }"
         [ngStyle]="{
-          'width': width
+          'width': button ? button.width : width
         }"
 >
   <ng-content></ng-content>

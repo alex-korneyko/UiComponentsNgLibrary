@@ -7,7 +7,10 @@
   <div class="modal-container"
        (click)="stopPropagation($event)"
        [ngStyle]="{
-        'width': size == null ? 'max-content' : size === sizeEnum.lg ? '1200px' : size === sizeEnum.sm ? '600px' : '300px'
+        'width': size == null ? 'calc(100% - 50rem)' : size === sizeEnum.lg ? 'calc(100% - 20rem)' : size === sizeEnum.sm ? 'calc(100% - 80rem)' : 'calc(100% - 100rem)'
+       }"
+       [ngClass]="{
+       'scrollable': scrollable
        }"
   >
     <div *ngIf="header" class="modal-header-container">
@@ -18,15 +21,40 @@
         <button class="btn secondary" (click)="closeClick()">X</button>
       </div>
     </div>
-    <div class="modal-body-container">
+    <div class="modal-body-container"
+         [ngClass]="{
+          'scrollable': scrollable
+          }"
+    >
       <p *ngIf="text">
         {{text}}
       </p>
       <ng-content></ng-content>
     </div>
-    <div *ngIf="showFooter" class="modal-footer-container">
-      <button class="btn success" (click)="okFunction(modalData)">Ok</button>
-      <button class="btn secondary" (click)="closeClick()">Cancel</button>
+    <div *ngIf="showFooter">
+      <div class="modal-footer-container"
+           *ngIf="buttons == null || buttons.length <= 0">
+        <bs-button width="150px"
+                   [size]="size"
+                   [color]="colorStyle.Green"
+                   (clickEvent)="okFunction(modalData)"
+        >Ok
+        </bs-button>
+
+        <bs-button width="150px"
+                   [size]="size"
+                   [color]="colorStyle.Grey"
+                   (clickEvent)="closeClick()"
+        >Cancel
+        </bs-button>
+      </div>
+      <div class="modal-footer-container"
+           *ngIf="buttons?.length > 0">
+        <bs-button *ngFor="let button of buttons"
+                   [button]="button"
+        >{{button.title}}
+        </bs-button>
+      </div>
     </div>
   </div>
 </div>

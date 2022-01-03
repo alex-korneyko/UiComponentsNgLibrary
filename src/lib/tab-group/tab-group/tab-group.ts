@@ -3,14 +3,15 @@ import {Size} from '../../size.enum';
 import {ColorStyle} from '../../color-style.enum';
 import {TabGroupComponent} from './tab-group.component';
 import {Type} from '@angular/core';
+import {TabContent} from '../tab-content';
 
-export class TabGroup {
-  private _tabs = new Array<Tab>()
+export class TabGroup<T> {
+  private _tabs = new Array<Tab<T>>()
   private _size: Size;
   private _color: ColorStyle;
-  private _component: TabGroupComponent;
+  private _component: TabGroupComponent<T>;
 
-  get tabs(): Tab[] {
+  get tabs(): Tab<T>[] {
     return this._tabs;
   }
 
@@ -22,50 +23,46 @@ export class TabGroup {
     return this._color;
   }
 
-  get component(): TabGroupComponent {
+  get component(): TabGroupComponent<T> {
     return this._component;
   }
 
-  set component(value: TabGroupComponent) {
+  set component(value: TabGroupComponent<T>) {
     this._component = value;
   }
 
-  AddTab(tab: Tab): TabGroup {
+  AddTab(tab: Tab<T>): TabGroup<T> {
     this._tabs.push(tab);
     return this;
   }
 
-  SetSize(size: Size): TabGroup {
+  SetSize(size: Size): TabGroup<T> {
     this._size = size;
     return this;
   }
 
-  SetColor(color: ColorStyle): TabGroup {
+  SetColor(color: ColorStyle): TabGroup<T> {
     this._color = color;
     return this;
   }
 
-  GetTabBuilder(): TabBuilder {
+  GetTabBuilder(): TabBuilder<T> {
     return new TabBuilder(this);
   }
 
-  ActivateTab<T>(tab: Tab) {
+  ActivateTab<T>(tab: Tab<T>) {
     tab.SetActive();
-    let componentFactory = this.component.componentFactoryResolver.resolveComponentFactory(tab.content);
-    let viewContainerRef = this.component.tabContentHost.viewContainerRef;
-    viewContainerRef.clear();
-    viewContainerRef.createComponent(componentFactory);
   }
 }
 
-class TabBuilder {
-  private readonly _tabGroup: TabGroup;
+class TabBuilder<T> {
+  private readonly _tabGroup: TabGroup<T>;
 
-  constructor(tabGroup: TabGroup) {
+  constructor(tabGroup: TabGroup<T>) {
     this._tabGroup = tabGroup;
   }
 
-  Build<T>(title: string, content: Type<any>): Tab {
-    return new Tab(title, content, this._tabGroup);
+  Build(title: string, content: Type<TabContent<T>>): Tab<T> {
+    return new Tab<T>(title, content, this._tabGroup);
   }
 }

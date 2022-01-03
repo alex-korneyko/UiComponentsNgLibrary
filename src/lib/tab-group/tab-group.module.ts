@@ -4,6 +4,7 @@ import { TabGroupComponent } from './tab-group/tab-group.component';
 import { TabHeaderComponent } from './tab-group/tab-header/tab-header.component';
 import { TabHeaderItemComponent } from './tab-group/tab-header/tab-header-item/tab-header-item.component';
 import { TabContentDirective } from './tab-content.directive';
+import { TabContentComponent } from './tab-group/tab-content/tab-content.component';
 
 
 
@@ -12,7 +13,8 @@ import { TabContentDirective } from './tab-content.directive';
     TabGroupComponent,
     TabHeaderComponent,
     TabHeaderItemComponent,
-    TabContentDirective
+    TabContentDirective,
+    TabContentComponent
   ],
   imports: [
     CommonModule
