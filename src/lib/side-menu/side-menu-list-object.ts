@@ -1,13 +1,13 @@
-import {SideMenuItemParam} from './side-menu-item-param';
+import {SideMenuItem} from './side-menu-item';
 
 export class SideMenuListObject {
-  sideMenuItemParam: SideMenuItemParam;
+  sideMenuItemParam: SideMenuItem;
   parentMenu: SideMenuListObject;
   children = new Array<SideMenuListObject>()
   nestingLevel: number;
   childrenIsOpen = false;
 
-  constructor(sideMenuItemParam: SideMenuItemParam, nestingLevel: number, parent?: SideMenuListObject) {
+  constructor(sideMenuItemParam: SideMenuItem, nestingLevel: number, parent?: SideMenuListObject) {
     this.sideMenuItemParam = sideMenuItemParam;
     this.nestingLevel = nestingLevel;
     this.parentMenu = parent;

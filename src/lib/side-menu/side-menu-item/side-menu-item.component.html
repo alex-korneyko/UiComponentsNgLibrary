@@ -9,19 +9,18 @@
      [ngStyle]="{
       'padding-left': menuItemListObject.nestingLevel * 10 + 'px'
      }"
-     (click)="MenuItemClickHandler()"
-     (dblclick)="InnerMenuChevronClick()">
+     >
 
-  <div class="side-menu-item-chevron"
+  <div class="side-menu-item-chevron-container"
        [ngClass]="{
         'xsm': size == sizeEnum.xsm,
         'sm': size == sizeEnum.sm,
         'lg': size == sizeEnum.lg
        }"
   >
-    <div style="height: 100%"
-         *ngIf="menuItemListObject.sideMenuItemParam.children?.length > 0"
-         (click)="InnerMenuChevronClick()">
+    <div class="side-menu-item-chevron-content"
+      *ngIf="menuItemListObject.sideMenuItemParam.children?.length > 0"
+      (click)="InnerMenuChevronClick()" >
       <i *ngIf="!menuItemListObject.childrenIsOpen" class="fa fa-chevron-right" style="font-size: x-small"
          aria-hidden="true"></i>
       <i *ngIf="menuItemListObject.childrenIsOpen" class="fa fa-chevron-down" style="font-size: x-small"
@@ -29,7 +28,10 @@
     </div>
   </div>
 
-  <div class="side-menu-item-title">
+  <div class="side-menu-item-title"
+       (click)="MenuItemClickHandler()"
+       (dblclick)="InnerMenuChevronClick()"
+  >
     {{menuItemListObject.sideMenuItemParam.menuItemTitle}}
   </div>
 </div>

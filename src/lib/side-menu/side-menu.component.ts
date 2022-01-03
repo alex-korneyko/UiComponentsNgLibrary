@@ -10,7 +10,7 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import {SideMenuContainerContentDirective} from './side-menu-container-content.directive';
-import {SideMenuItemParam} from './side-menu-item-param';
+import {SideMenuItem} from './side-menu-item';
 import {SideMenuListObject} from './side-menu-list-object';
 import {Size} from '../size.enum';
 
@@ -28,7 +28,7 @@ export class SideMenuComponent implements OnInit, OnChanges {
   sideMenuContentHost: SideMenuContainerContentDirective;
 
   @Input()
-  menuItems = new Array<SideMenuItemParam>()
+  menuItems = new Array<SideMenuItem>()
 
   @Input()
   menuWidth = 200
@@ -36,7 +36,7 @@ export class SideMenuComponent implements OnInit, OnChanges {
   @Input()
   size: Size
 
-  selectedMenuItem: SideMenuItemParam;
+  selectedMenuItem: SideMenuItem;
   sideMenuListObjects = new Array<SideMenuListObject>();
   private nestingLevelCounter = 0;
 
@@ -52,7 +52,7 @@ export class SideMenuComponent implements OnInit, OnChanges {
     this.FillMenuListObject(this.menuItems);
   }
 
-  private FillMenuListObject(menuItems: SideMenuItemParam[], parent?: SideMenuListObject) {
+  private FillMenuListObject(menuItems: SideMenuItem[], parent?: SideMenuListObject) {
     menuItems.forEach(item => {
       let sideMenuListObject = new SideMenuListObject(item, this.nestingLevelCounter, parent);
       parent?.children.push(sideMenuListObject);

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, EventEmitter, Output} from '@angular/core';
-import {SideMenuItemParam} from '../side-menu-item-param';
+import {SideMenuItem} from '../side-menu-item';
 import {SideMenuListObject} from '../side-menu-list-object';
 import {Size} from '../../size.enum';
 
@@ -20,7 +20,7 @@ export class SideMenuItemsListComponent implements OnInit {
   sideMenuListObjects = new Array<SideMenuListObject>();
 
   @Input()
-  selectedMenuItem: SideMenuItemParam;
+  selectedMenuItem: SideMenuItem;
 
   @Input()
   separatorDragging: boolean

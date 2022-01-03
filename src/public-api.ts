@@ -15,7 +15,7 @@ export * from './lib/button/button/button';
 
 export * from './lib/side-menu/side-menu.module';
 export * from './lib/side-menu/side-menu.component';
-export * from './lib/side-menu/side-menu-item-param';
+export * from './lib/side-menu/side-menu-item';
 
 export * from './lib/text-input/text-input.module';
 export * from './lib/text-input/text-input/text-input.component';
@@ -75,6 +75,7 @@ export * from './lib/directives/color.directive';
 export * from './lib/tab-group/tab-group.module';
 export * from './lib/tab-group/tab-group/tab-group';
 export * from './lib/tab-group/tab-group/tab';
+export * from './lib/tab-group/tab-content';
 export * from './lib/tab-group/tab-group/tab-group.component';
 
 export * from './lib/modal-window/modal-window.module'
