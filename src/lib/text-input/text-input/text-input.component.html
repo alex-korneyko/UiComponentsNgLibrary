@@ -1,4 +1,8 @@
-<div class="text-input-container">
+<div class="text-input-container"
+     [ngStyle]="{
+      'background-color': color
+     }"
+>
   <bs-input-title *ngIf="titlePosition == titlePositionValues.Top"
                   [size]="size"
                   [titlePosition]="titlePosition"
@@ -19,7 +23,7 @@
       {{title}}
     </bs-input-title>
 
-    <div class="input" style="flex: 1"
+    <div class="input-container"
          [class.disabled]="disabled"
          [class]="color">
       <input [type]="type"
@@ -29,10 +33,14 @@
              [title]="prompt"
              [placeholder]="placeholder"
              [ngClass]="{
-            'xsm': size === sizeValues.xsm,
-            'sm': size === sizeValues.sm,
-            'lg': size === sizeValues.lg
-           }">
+              'xsm': size === sizeValues.xsm,
+              'sm': size === sizeValues.sm,
+              'lg': size === sizeValues.lg
+             }"
+             [ngStyle]="{
+              'border-color': color
+             }"
+      >
     </div>
 
     <bs-input-title *ngIf="titlePosition == titlePositionValues.Right"

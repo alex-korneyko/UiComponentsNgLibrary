@@ -2,23 +2,49 @@
      [ngClass]="{
       'show': show
      }"
-     (click)="closeClick()">
+     (click)="shadowClick()">
 
   <div class="modal-container"
        (click)="stopPropagation($event)"
        [ngStyle]="{
-        'width': size == null ? 'calc(100% - 50rem)' : size === sizeEnum.lg ? 'calc(100% - 20rem)' : size === sizeEnum.sm ? 'calc(100% - 80rem)' : 'calc(100% - 100rem)'
+        'width': currentSize() == null
+          ? 'calc(100% - 50rem)'
+          : currentSize() === sizeEnum.lg
+            ? 'calc(100% - 20rem)'
+            : currentSize() === sizeEnum.sm
+              ? 'calc(100% - 75rem)'
+              : currentSize() === sizeEnum.xsm
+                ? 'calc(100% - 90rem)'
+                : '100%',
+          'margin': isFullscreen ? '0' : '5rem auto',
+          'min-height': isFullscreen ? '100%' : '200px'
        }"
        [ngClass]="{
        'scrollable': scrollable
        }"
   >
-    <div *ngIf="header" class="modal-header-container">
+    <div class="modal-header-container"
+         *ngIf="header"
+         [ngClass]="color"
+    >
       <div class="modal-header-text">
         <span>{{header}}</span>
       </div>
-      <div class="modal-header-close-button">
-        <button class="btn secondary" (click)="closeClick()">X</button>
+      <div class="modal-header-buttons">
+        <bs-button
+          [size]="size"
+          [color]="colorStyle.Blue"
+          (clickEvent)="fullscreenClick()">
+          <i *ngIf="!isFullscreen" class="fa fa-window-maximize" aria-hidden="true"></i>
+          <i *ngIf="isFullscreen" class="fa fa-window-restore" aria-hidden="true"></i>
+        </bs-button>
+
+        <bs-button
+          [disabled]="requireAction"
+          [size]="size"
+          [color]="colorStyle.Red"
+          (clickEvent)="closeClick()"
+        ><i class="fa fa-times" aria-hidden="true"></i></bs-button>
       </div>
     </div>
     <div class="modal-body-container"
@@ -48,7 +74,7 @@
         >Cancel
         </bs-button>
       </div>
-      <div class="modal-footer-container"
+      <div class="modal-footer-container Light"
            *ngIf="buttons?.length > 0">
         <bs-button *ngFor="let button of buttons"
                    [button]="button"

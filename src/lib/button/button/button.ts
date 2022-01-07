@@ -13,7 +13,7 @@ export class Button {
   private _size: Size;
   private _color: ColorStyle = ColorStyle.Grey;
   private _width = "auto"
-  private _disabled = false;
+  private _disabled: () => boolean = () => false;
   private _data: any
 
   get title(): string {
@@ -36,7 +36,7 @@ export class Button {
     return this._width;
   }
 
-  get disabled(): boolean {
+  get disabled(): () => boolean {
     return this._disabled;
   }
 
@@ -59,8 +59,8 @@ export class Button {
     return this;
   }
 
-  setDisabled(disabled = true): Button {
-    this._disabled = disabled;
+  setDisabled(action: () => boolean): Button {
+    this._disabled = action;
     return this;
   }
 

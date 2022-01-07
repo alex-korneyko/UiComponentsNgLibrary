@@ -43,10 +43,10 @@ export class TextInputComponent implements OnInit {
   placeholder = "";
 
   @Input()
-  bsModel: string | number;
+  bsModel: any;
 
   @Output()
-  bsModelChange = new EventEmitter<string | number>();
+  bsModelChange = new EventEmitter<any>();
 
   @Output()
   onChange = new EventEmitter();
@@ -59,7 +59,7 @@ export class TextInputComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  modelChanged(event: string | number) {
+  modelChanged(event: any) {
     this.bsModelChange.emit(event);
     this.onChange.emit();
   }

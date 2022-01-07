@@ -77,6 +77,8 @@ export * from './lib/tab-group/tab-group/tab-group';
 export * from './lib/tab-group/tab-group/tab';
 export * from './lib/tab-group/tab-content';
 export * from './lib/tab-group/tab-group/tab-group.component';
+export * from './lib/tab-group/tab-group/tab-header/tab-header.component';
+export * from './lib/tab-group/tab-group/tab-content/tab-content.component';
 
 export * from './lib/modal-window/modal-window.module'
 export * from './lib/modal-window/modal-window/modal-window.component'

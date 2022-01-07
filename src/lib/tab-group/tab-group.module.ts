@@ -6,8 +6,6 @@ import { TabHeaderItemComponent } from './tab-group/tab-header/tab-header-item/t
 import { TabContentDirective } from './tab-content.directive';
 import { TabContentComponent } from './tab-group/tab-content/tab-content.component';
 
-
-
 @NgModule({
   declarations: [
     TabGroupComponent,
@@ -20,7 +18,9 @@ import { TabContentComponent } from './tab-group/tab-content/tab-content.compone
     CommonModule
   ],
   exports: [
-    TabGroupComponent
+    TabGroupComponent,
+    TabHeaderComponent,
+    TabContentComponent
   ]
 })
 export class TabGroupModule { }

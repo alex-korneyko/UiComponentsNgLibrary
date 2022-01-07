@@ -6,7 +6,10 @@ import {Button} from '../../button/button/button';
 @Component({
   selector: 'lib-modal-window',
   templateUrl: './modal-window.component.html',
-  styleUrls: ['./modal-window.component.css']
+  styleUrls: [
+    './modal-window.component.css',
+    '../../../styles/bs-variables.css'
+  ]
 })
 export class ModalWindowComponent implements OnInit {
 
@@ -34,13 +37,20 @@ export class ModalWindowComponent implements OnInit {
   size: Size
 
   @Input()
+  color: ColorStyle = ColorStyle.None
+
+  @Input()
   scrollable = false;
 
   @Input()
   buttons = new Array<Button>();
 
+  @Input()
+  requireAction = false;
+
   sizeEnum = Size;
   colorStyle = ColorStyle
+  isFullscreen = false;
 
   @Input()
   okFunction: (data?: any) => void;
@@ -61,5 +71,20 @@ export class ModalWindowComponent implements OnInit {
       this.show = false;
       this.showChange.emit(this.show)
     }
+  }
+
+  shadowClick() {
+    if (!this.requireAction) {
+      this.show = false;
+      this.showChange.emit(this.show)
+    }
+  }
+
+  fullscreenClick() {
+    this.isFullscreen = !this.isFullscreen;
+  }
+
+  currentSize(): Size {
+    return this.isFullscreen ? Size.max : this.size
   }
 }

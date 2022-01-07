@@ -1,5 +1,5 @@
 <button class="bs-btn"
-        [disabled]="button? button.disabled : disabled"
+        [disabled]="button? button.disabled() : disabled"
         (click)="BtnClick($event)"
         [ngClass]="{
           'xsm': button ? button.size === componentSizes.xsm : size === componentSizes.xsm,

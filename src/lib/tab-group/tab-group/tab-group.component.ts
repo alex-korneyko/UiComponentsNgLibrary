@@ -1,7 +1,7 @@
 import {Component, ComponentFactoryResolver, ElementRef, Input, Output, EventEmitter, OnInit, ViewChild} from '@angular/core';
-import {TabGroup} from './tab-group';
 import {TabContentDirective} from '../tab-content.directive';
 import {Tab} from './tab';
+import {TabGroup} from './tab-group';
 
 @Component({
   selector: 'bs-tab-group',

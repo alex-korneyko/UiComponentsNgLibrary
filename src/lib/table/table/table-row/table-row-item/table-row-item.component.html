@@ -12,7 +12,7 @@
     <span class="table-row-item-value-span"
           *ngIf="tableRowItem.column.columnType == columnType.Date"
           [title]="tableRowItem.value">
-      {{tableRowItem.value | date:'dd.mm.YYYY'}}
+      {{tableRowItem.value | date:'dd.MM.YYYY'}}
     </span>
 
     <span class="table-row-item-value-span"
@@ -24,7 +24,7 @@
     <span class="table-row-item-value-span"
           *ngIf="tableRowItem.column.columnType == columnType.DateTime"
           [title]="tableRowItem.value">
-      {{tableRowItem.value | date:'dd.mm.YYYY, HH:mm'}}
+      {{tableRowItem.value | date:'dd.MM.YYYY, HH:mm'}}
     </span>
 
     <input type="checkbox" class="table-row-item-value-checkbox" disabled
