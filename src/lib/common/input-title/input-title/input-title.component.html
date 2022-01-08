@@ -1,6 +1,9 @@
 <div class="title-container" [class]="color" [class.disabled]="disabled">
   <span class="title-container__text"
     [ngClass]="{
+    'left': alignment === alignmentValues.Left,
+    'center': alignment === alignmentValues.Center,
+    'right': alignment === alignmentValues.Right,
     'xsm': size === sizeValues.xsm && (titlePosition === titlePositionValues.Left || titlePosition === titlePositionValues.Right),
     'sm': size === sizeValues.sm && (titlePosition === titlePositionValues.Left || titlePosition === titlePositionValues.Right),
     'lg': size === sizeValues.lg && (titlePosition === titlePositionValues.Left || titlePosition === titlePositionValues.Right),

@@ -13,6 +13,7 @@
         <div *ngFor="let row of table?.rows"
              [bsDropdownMenu]="{menuComponent: testDropdownMenu, data: row.dataItem}"
              [bsDropdownMenuEventType]="dropdownEventType.MouseContext"
+             (contextmenu)="rightClickHandler(row)"
         >
 
             <bs-table-row
@@ -25,6 +26,8 @@
                 (dblRowClick)="DblRowClickHandler($event)"
             ></bs-table-row>
         </div>
+
+      <div style="flex: 1" (click)="tableDataContainerClick($event)"></div>
 
     </div>
 

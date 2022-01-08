@@ -1,10 +1,17 @@
+input[type="checkbox"] {
+  margin: 0;
+}
+
 .checkbox-container {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 3px;
+  overflow: hidden;
 }
 
 .input-component {
-  height: calc(var(--std-height) - 2px);
-  line-height: calc(var(--std-height) - 2px);
+  height: calc(var(--std-height));
+  line-height: calc(var(--std-height));
   font-size: calc(var(--std-height) - 12px);
   width:  calc(var(--std-height) - 12px);
   display: block;
@@ -17,23 +24,23 @@
 }
 
 .input-component.xsm {
-  height: calc(var(--xsm-height) - 2px);
+  height: calc(var(--xsm-height));
   width:  calc(var(--xsm-height) - 8px);
-  line-height: calc(var(--xsm-height) - 2px);
+  line-height: calc(var(--xsm-height));
   font-size: calc(var(--xsm-height) - 6px);
 }
 
 .input-component.sm {
-  height: calc(var(--sm-height) - 2px);
+  height: calc(var(--sm-height));
   width:  calc(var(--sm-height) - 10px);
-  line-height: calc(var(--sm-height) - 2px);
+  line-height: calc(var(--sm-height));
   font-size: calc(var(--sm-height) - 9px);
 }
 
 .input-component.lg {
-  height: calc(var(--lg-height) - 2px);
+  height: calc(var(--lg-height));
   width:  calc(var(--lg-height) - 12px);
-  line-height: calc(var(--lg-height) - 2px);
+  line-height: calc(var(--lg-height));
   font-size: calc(var(--lg-height) - 14px);
 }
 

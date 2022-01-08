@@ -2,6 +2,7 @@
      [class]="dropdownMenuItem.color"
      [ngClass]="{
         'bottom-divider': dropdownMenuItem.bottomDivider,
+        'top-divider': dropdownMenuItem.topDivider,
         'disabled': dropdownMenuItem.disabled(data),
         'lg': dropdownMenuItem.size === sizeEnum.lg,
         'sm': dropdownMenuItem.size === sizeEnum.sm,
@@ -14,7 +15,8 @@
           'sm': dropdownMenuItem.size === sizeEnum.sm,
           'xsm': dropdownMenuItem.size === sizeEnum.xsm
         }">
-    {{dropdownMenuItem.icon}}
+    <span [innerHTML]="dropdownMenuItem.icon"></span>
+<!--    {{dropdownMenuItem.icon}}-->
   </span>
 
   <div class="dropdown-menu-item-title">

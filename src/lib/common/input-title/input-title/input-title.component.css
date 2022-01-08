@@ -6,8 +6,8 @@
   display: block;
   margin: 0;
   padding: 0 5px;
-  height: calc(var(--std-height) - 2px);
-  line-height: calc(var(--std-height) - 2px);
+  height: calc(var(--std-height));
+  line-height: calc(var(--std-height));
   font-size: calc(var(--std-height) - 12px);
   font-weight: 600;
   cursor: default;
@@ -17,21 +17,31 @@
   white-space: nowrap;
 }
 
+.title-container__text.left {
+  text-align: left;
+}
+.title-container__text.center {
+  text-align: center;
+}
+.title-container__text.right {
+  text-align: right;
+}
+
 .title-container__text.xsm {
-  height: calc(var(--xsm-height) - 2px);
-  line-height: calc(var(--xsm-height) - 2px);
+  height: calc(var(--xsm-height));
+  line-height: calc(var(--xsm-height));
   font-size: calc(var(--xsm-height) - 6px);
 }
 
 .title-container__text.sm {
-  height: calc(var(--sm-height) - 2px);
-  line-height: calc(var(--sm-height) - 2px);
+  height: calc(var(--sm-height));
+  line-height: calc(var(--sm-height));
   font-size: calc(var(--sm-height) - 9px);
 }
 
 .title-container__text.lg {
-  height: calc(var(--lg-height) - 2px);
-  line-height: calc(var(--lg-height) - 2px);
+  height: calc(var(--lg-height));
+  line-height: calc(var(--lg-height));
   font-size: calc(var(--lg-height) - 14px);
 }
 

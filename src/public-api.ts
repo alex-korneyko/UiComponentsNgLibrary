@@ -5,6 +5,7 @@
 export * from './lib/alex-apps-ui-components.module';
 
 export * from './lib/size.enum';
+export * from './lib/alignment.enum';
 export * from './lib/color-style.enum';
 export * from './lib/title-position.enum';
 export * from './lib/text-input-type.enum';

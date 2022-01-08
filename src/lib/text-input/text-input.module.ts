@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TextInputComponent } from './text-input/text-input.component';
 import {FormsModule} from '@angular/forms';
 import {InputTitleModule} from '../common/input-title/input-title-module';
+import {ButtonModule} from '../button/button.module';
 
 
 
@@ -10,11 +11,12 @@ import {InputTitleModule} from '../common/input-title/input-title-module';
   declarations: [
     TextInputComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    InputTitleModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        InputTitleModule,
+        ButtonModule
+    ],
   exports: [
     TextInputComponent
   ]

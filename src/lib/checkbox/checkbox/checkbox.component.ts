@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {TitlePosition} from '../../title-position.enum';
 import {Size} from '../../size.enum';
 import {ColorStyle} from '../../color-style.enum';
+import {Alignment} from '../../alignment.enum';
 
 @Component({
   selector: 'bs-checkbox',
@@ -32,10 +33,13 @@ export class CheckboxComponent implements OnInit {
   prompt = "";
 
   @Input()
-  titleWidth = "90%"
+  titleWidth = "auto"
 
   @Input()
   bsModel = false;
+
+  @Input()
+  titleAlignment = Alignment.Left
 
   @Output()
   bsModelChange = new EventEmitter<boolean>();

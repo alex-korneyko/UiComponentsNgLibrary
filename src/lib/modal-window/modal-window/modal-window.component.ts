@@ -48,6 +48,9 @@ export class ModalWindowComponent implements OnInit {
   @Input()
   requireAction = false;
 
+  @Input()
+  allowFullscreen = true;
+
   sizeEnum = Size;
   colorStyle = ColorStyle
   isFullscreen = false;

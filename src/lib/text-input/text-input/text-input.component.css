@@ -10,12 +10,12 @@
 .input-container {
   flex: 1;
   overflow: hidden;
-
+  display: flex;
 }
 
 input {
-  height: calc(var(--std-height) - 2px);
-  line-height: calc(var(--std-height) - 2px);
+  height: calc(var(--std-height));
+  line-height: calc(var(--std-height));
   font-size: calc(var(--std-height) - 12px);
   width: 100%;
   display: block;
@@ -36,20 +36,20 @@ input:disabled {
 }
 
 input.xsm {
-  height: calc(var(--xsm-height) - 2px);
-  line-height: calc(var(--xsm-height) - 2px);
+  height: calc(var(--xsm-height));
+  line-height: calc(var(--xsm-height));
   font-size: calc(var(--xsm-height) - 6px);
 }
 
 input.sm {
-  height: calc(var(--sm-height) - 2px);
-  line-height: calc(var(--sm-height) - 2px);
+  height: calc(var(--sm-height));
+  line-height: calc(var(--sm-height));
   font-size: calc(var(--sm-height) - 9px);
 }
 
 input.lg {
-  height: calc(var(--lg-height) - 2px);
-  line-height: calc(var(--lg-height) - 2px);
+  height: calc(var(--lg-height));
+  line-height: calc(var(--lg-height));
   font-size: calc(var(--lg-height) - 14px);
 }
 

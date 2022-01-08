@@ -8,13 +8,13 @@
        (click)="stopPropagation($event)"
        [ngStyle]="{
         'width': currentSize() == null
-          ? 'calc(100% - 50rem)'
+          ? '900px'
           : currentSize() === sizeEnum.lg
-            ? 'calc(100% - 20rem)'
+            ? '1100px'
             : currentSize() === sizeEnum.sm
-              ? 'calc(100% - 75rem)'
+              ? '700px'
               : currentSize() === sizeEnum.xsm
-                ? 'calc(100% - 90rem)'
+                ? '500px'
                 : '100%',
           'margin': isFullscreen ? '0' : '5rem auto',
           'min-height': isFullscreen ? '100%' : '200px'
@@ -32,6 +32,7 @@
       </div>
       <div class="modal-header-buttons">
         <bs-button
+          *ngIf="allowFullscreen"
           [size]="size"
           [color]="colorStyle.Blue"
           (clickEvent)="fullscreenClick()">

@@ -3,6 +3,7 @@ import {ColorStyle} from '../../color-style.enum';
 import {Size} from '../../size.enum';
 import {TitlePosition} from '../../title-position.enum';
 import {TextInputType} from '../../text-input-type.enum';
+import {Button} from '../../button/button/button';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class TextInputComponent implements OnInit {
   size: Size;
 
   @Input()
-  titlePosition: TitlePosition;
+  titlePosition = TitlePosition.Left;
 
   @Input()
   type: TextInputType = TextInputType.text;
@@ -45,6 +46,9 @@ export class TextInputComponent implements OnInit {
   @Input()
   bsModel: any;
 
+  @Input()
+  buttons = new Array<Button>()
+
   @Output()
   bsModelChange = new EventEmitter<any>();
 
@@ -57,6 +61,7 @@ export class TextInputComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.buttons.forEach(button => button.setSize(this.size))
   }
 
   modelChanged(event: any) {

@@ -21,10 +21,7 @@ export class Table<T extends TableData> {
     this._data = data;
     this._columnSet = columnSet;
     this._columnSet.table = this;
-    data.forEach(dataItem => {
-      let tableRow = new TableRow(dataItem, columnSet);
-      this._rows.push(tableRow);
-    });
+    this.refresh();
     this.GetSettings();
   }
 
@@ -226,5 +223,29 @@ export class Table<T extends TableData> {
     let stringify = JSON.stringify(tableSettings);
 
     localStorage.setItem(this._tableId, stringify);
+  }
+
+  addItems(...items: T[]) {
+    items.forEach(item => this._rows.push(new TableRow<T>(item, this._columnSet)))
+
+    this.Sort();
+  }
+
+  removeItems(...items: T[]) {
+    items.forEach(item => {
+      let index = this._rows.findIndex(row => row.dataItem === item);
+      if (index > -1) {
+        this._rows.splice(index, 1);
+      }
+    })
+  }
+
+  refresh() {
+    this._rows = new Array<TableRow<T>>()
+    this._data.forEach(dataItem => {
+      let tableRow = new TableRow(dataItem, this._columnSet);
+      this._rows.push(tableRow);
+    });
+    this.Sort();
   }
 }

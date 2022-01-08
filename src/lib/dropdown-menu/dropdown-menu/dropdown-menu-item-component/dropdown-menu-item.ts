@@ -4,16 +4,22 @@ import {ColorStyle} from '../../../color-style.enum';
 
 export class DropdownMenuItem<T> {
   private readonly _tile: string;
-  private readonly _icon: string;
+  private _icon: string;
   private _parentMenu: DropdownMenu<T>
   private _innerMenu: DropdownMenu<T>
   private _action: (data: T) => void;
   private _size: Size;
   private _color: ColorStyle;
+  private _topDivider = false;
   private _bottomDivider = false;
   private _disabled = (data: T): boolean => {return false};
   private _hidden = (data: T): boolean => {return false};
 
+  /**
+   * Item for dropdown menu
+   * @param tile - title of menu item
+   * @param icon - rendered icon. It may be html-tag. for example font awesome <i></i> object with classes
+   */
   constructor(tile: string, icon?: string) {
     this._tile = tile;
     this._icon = icon ?? "";
@@ -49,6 +55,10 @@ export class DropdownMenuItem<T> {
 
   get color(): ColorStyle {
     return this._color;
+  }
+
+  get topDivider(): boolean {
+    return this._topDivider;
   }
 
   get bottomDivider(): boolean {
@@ -88,6 +98,11 @@ export class DropdownMenuItem<T> {
     return this;
   }
 
+  SetTopDivider(value = true): DropdownMenuItem<T> {
+    this._topDivider = value;
+    return this;
+  }
+
   SetBottomDivider(value = true): DropdownMenuItem<T> {
     this._bottomDivider = value;
     return this;
@@ -101,5 +116,9 @@ export class DropdownMenuItem<T> {
   AddHideDeterminant(func: (data: T) => boolean): DropdownMenuItem<T> {
     this._hidden = func;
     return this;
+  }
+
+  SetHtmlIcon(html: string) {
+    this._icon = html;
   }
 }

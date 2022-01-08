@@ -1,4 +1,4 @@
-<button class="bs-btn"
+<button class="bs-btn" title="{{button ? button.tooltip : tooltip}}"
         [disabled]="button? button.disabled() : disabled"
         (click)="BtnClick($event)"
         [ngClass]="{
@@ -19,5 +19,8 @@
           'width': button ? button.width : width
         }"
 >
-  <ng-content></ng-content>
+  <div *ngIf="!button?.title">
+    <ng-content></ng-content>
+  </div>
+  <div *ngIf="button?.title" [innerHTML]="button?.title"></div>
 </button>

@@ -67,6 +67,6 @@ export class DropdownMenu<T> {
       item.innerMenu?.Hide()
     })
 
-    this.dropdownComponent.Hide();
+    this.dropdownComponent?.Hide();
   }
 }

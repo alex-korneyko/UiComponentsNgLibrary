@@ -14,6 +14,10 @@
   border-bottom: 1px solid dimgray;
 }
 
+.dropdown-menu-item-container.top-divider {
+  border-top: 1px solid dimgray;
+}
+
 .dropdown-menu-item-title {
   text-align: left;
   flex: 1;

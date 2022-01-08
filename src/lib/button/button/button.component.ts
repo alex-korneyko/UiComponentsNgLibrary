@@ -31,6 +31,9 @@ export class ButtonComponent implements OnInit {
   @Output()
   clickEvent = new EventEmitter<MouseEvent>();
 
+  @Input()
+  tooltip = "";
+
   componentSizes = Size;
   colorStyle = ColorStyle
 

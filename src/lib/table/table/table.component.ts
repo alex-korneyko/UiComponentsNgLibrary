@@ -54,4 +54,14 @@ export class TableComponent<T extends TableData> implements OnInit {
   DblRowClickHandler(event: { tableRow: TableRow<T>; event: MouseEvent }) {
     this.dblRowClick.emit({data: event.tableRow.dataItem, event: event.event});
   }
+
+  rightClickHandler(row: TableRow<T>) {
+    this.table.selectedData.splice(0, this.table.selectedData.length)
+    this.table.selectedData.push(row.dataItem);
+  }
+
+  tableDataContainerClick($event: MouseEvent) {
+    // $event.stopPropagation();
+    this.table.selectedData.splice(0, this.table.selectedData.length)
+  }
 }

@@ -26,21 +26,38 @@
     <div class="input-container"
          [class.disabled]="disabled"
          [class]="color">
-      <input [type]="type"
-             [disabled]="disabled"
-             [ngModel]="bsModel"
-             (ngModelChange)="modelChanged($event)"
-             [title]="prompt"
-             [placeholder]="placeholder"
-             [ngClass]="{
+
+      <div *ngIf="titlePosition == titlePositionValues.Right">
+        <bs-button
+          *ngFor="let button of buttons"
+          [button]="button"
+        >{{button.title}}</bs-button>
+      </div>
+
+      <div style="flex: 1">
+        <input [type]="type"
+               [disabled]="disabled"
+               [ngModel]="bsModel"
+               (ngModelChange)="modelChanged($event)"
+               [title]="prompt"
+               [placeholder]="placeholder"
+               [ngClass]="{
               'xsm': size === sizeValues.xsm,
               'sm': size === sizeValues.sm,
               'lg': size === sizeValues.lg
              }"
-             [ngStyle]="{
+               [ngStyle]="{
               'border-color': color
-             }"
-      >
+             }">
+      </div>
+
+      <div *ngIf="titlePosition == titlePositionValues.Left">
+        <bs-button
+          *ngFor="let button of buttons"
+          [button]="button"
+        >{{button.title}}</bs-button>
+      </div>
+
     </div>
 
     <bs-input-title *ngIf="titlePosition == titlePositionValues.Right"

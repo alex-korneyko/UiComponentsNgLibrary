@@ -15,6 +15,7 @@ export class Button {
   private _width = "auto"
   private _disabled: () => boolean = () => false;
   private _data: any
+  private _tooltip = ""
 
   get title(): string {
     return this._title;
@@ -44,6 +45,10 @@ export class Button {
     return this._data;
   }
 
+  get tooltip(): string {
+    return this._tooltip;
+  }
+
   setSize(size: Size): Button {
     this._size = size;
     return this;
@@ -64,8 +69,13 @@ export class Button {
     return this;
   }
 
-  addData(data: any): Button {
+  setData(data: any): Button {
     this._data = data;
+    return this;
+  }
+
+  setTooltip(tooltip: string): Button {
+    this._tooltip = tooltip;
     return this;
   }
 }
